@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Gokul Foods – Authentic South Indian Tiffin Center</title>
+<meta name="description" content="Sri Gokul Foods – Authentic South Indian Tiffin Center in Quthbullapur, Hyderabad. Order fresh idli, dosa, vada, pav bhaji and more. Home delivery available.">
+<meta name="keywords" content="sri gokul foods, tiffin center, south indian food, idli, dosa, vada, hyderabad, quthbullapur, pav bhaji, chaat">
+<meta property="og:title" content="Sri Gokul Foods – Authentic South Indian Tiffin">
+<meta property="og:description" content="Fresh, authentic South Indian tiffins & chaat. Order online, home delivery available.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ash: #4a4a52;
+  --ash-light: #6b6b75;
+  --ash-dark: #2c2c33;
+  --ash-deeper: #1a1a20;
+  --ash-faint: #f2f1f4;
+  --ash-border: #dddce0;
+  --white: #ffffff;
+  --cream: #faf9f7;
+  --gold: #c8973a;
+  --gold-light: #e8b96a;
+  --gold-faint: #fdf7ee;
+  --gold-dark: #a07828;
+  --green: #2d7a4f;
+  --red: #c0392b;
+  --shadow-xs: 0 1px 2px rgba(44,44,51,0.06);
+  --shadow-sm: 0 1px 6px rgba(44,44,51,0.09);
+  --shadow-md: 0 4px 18px rgba(44,44,51,0.13);
+  --shadow-lg: 0 12px 44px rgba(44,44,51,0.17);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --nav-h: 70px;
+  --transition: all 0.25s cubic-bezier(.4,0,.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--cream); color: var(--ash); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: var(--font-body); border: none; outline: none; background: none; }
+input, textarea, select { font-family: var(--font-body); }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 84px 0; }
+.section-title { font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 700; color: var(--ash-dark); line-height: 1.2; }
+.section-subtitle { font-size: 1rem; color: var(--ash-light); margin-top: 8px; }
+.gold-line { width: 52px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 2px; margin: 14px 0 32px; }
+.label-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.veg-dot { display: inline-block; width: 13px; height: 13px; border: 2px solid var(--green); border-radius: 3px; position: relative; flex-shrink: 0; }
+.veg-dot::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 5px; height: 5px; background: var(--green); border-radius: 50%; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); background: rgba(255,255,255,0.96); backdrop-filter: blur(14px) saturate(180%); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(221,220,224,0.6); transition: box-shadow 0.3s; overflow: hidden; }
+nav.scrolled { box-shadow: var(--shadow-md); }
+.nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 12px; cursor: pointer; flex-shrink: 0; }
+.nav-logo-img { width: 150px; height: 130px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: transparent; border: none; }
+.nav-logo-img img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.4)translateY(-10px)translateX(-18px); }
+.nav-logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--ash-dark); line-height: 1.1; }
+.nav-logo-sub { font-size: 0.6rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a { padding: 8px 15px; border-radius: 8px; font-size: 0.875rem; font-weight: 500; color: var(--ash); transition: var(--transition); cursor: pointer; }
+.nav-links a:hover, .nav-links a.active { background: var(--ash-faint); color: var(--ash-dark); }
+.nav-cta { background: var(--ash-dark) !important; color: white !important; padding: 9px 20px; border-radius: 9px; font-weight: 600; margin-left: 4px; box-shadow: 0 2px 8px rgba(44,44,51,0.2); }
+.nav-cta:hover { background: var(--ash) !important; transform: translateY(-1px); box-shadow: var(--shadow-md) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; z-index: 1002; position: relative; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--ash-dark); border-radius: 2px; transition: var(--transition); }
+
+/* ═══════════════════════════════
+   TASK 1 – MOBILE NAV DRAWER
+   Slides in from the RIGHT.
+   .mobile-menu and .open kept
+   so existing toggleMobileMenu()
+   continues to work unchanged.
+═══════════════════════════════ */
+/* Dark overlay behind the drawer */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu-overlay.open { display: block; opacity: 1; }
+
+/* Drawer panel */
+.mobile-menu {
+  /* Always in DOM; hidden via transform */
+  display: flex !important;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  border-bottom: none;
+  box-shadow: none;
+  /* Positioning */
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 280px; max-width: 88vw;
+  background: white;
+  z-index: 999;
+  overflow-y: auto;
+  box-shadow: -4px 0 30px rgba(44,44,51,0.18);
+  /* Hidden off-screen */
+  transform: translateX(110%);
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+.mobile-menu.open { transform: translateX(0); }
+
+/* Drawer header */
+.mobile-menu-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--ash-border);
+  flex-shrink: 0;
+}
+.mobile-menu-brand { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--ash-dark); }
+.mobile-menu-close {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--ash-faint); border: none; outline: none;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; color: var(--ash-dark); cursor: pointer;
+  transition: background 0.2s; flex-shrink: 0;
+}
+.mobile-menu-close:hover { background: var(--ash-border); }
+
+/* Links inside drawer */
+.mobile-menu a {
+  padding: 15px 22px;
+  border-bottom: 1px solid var(--ash-faint);
+  font-weight: 500; color: var(--ash-dark); cursor: pointer;
+  transition: background 0.18s;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.92rem;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { background: var(--ash-faint); }
+
+/* PAGE ROUTING */
+.page { display: none; padding-top: var(--nav-h); min-height: 100vh; }
+.page.active { display: block; }
+
+/* BUTTONS */
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--ash-dark); color: white; padding: 13px 26px; border-radius: 10px; font-weight: 600; font-size: 0.92rem; transition: var(--transition); box-shadow: 0 4px 14px rgba(44,44,51,0.22); cursor: pointer; }
+.btn-primary:hover { background: var(--ash); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--ash-dark); padding: 13px 26px; border-radius: 10px; font-weight: 600; font-size: 0.92rem; border: 2px solid var(--ash-border); transition: var(--transition); cursor: pointer; }
+.btn-secondary:hover { border-color: var(--ash); background: var(--ash-faint); }
+.btn-gold { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: white; padding: 13px 26px; border-radius: 10px; font-weight: 600; font-size: 0.92rem; transition: var(--transition); cursor: pointer; box-shadow: 0 4px 14px rgba(200,151,58,0.3); }
+.btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+/* HERO */
+.hero { min-height: calc(100vh - var(--nav-h)); display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 0; overflow: hidden; position: relative; }
+.hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--ash-faint) 0%, var(--white) 55%, var(--gold-faint) 100%); z-index: 0; }
+.hero-bg::before { content: ''; position: absolute; top: -80px; right: -80px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(200,151,58,0.12) 0%, transparent 65%); border-radius: 50%; }
+.hero-bg::after { content: ''; position: absolute; bottom: -100px; left: 100px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(74,74,82,0.06) 0%, transparent 65%); border-radius: 50%; }
+.hero-content { padding: 60px 48px 60px 40px; position: relative; z-index: 1; animation: fadeUp 0.7s ease forwards; }
+.hero-veg-badge { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid rgba(45,122,79,0.25); padding: 7px 16px; border-radius: 30px; font-size: 0.78rem; font-weight: 600; color: var(--green); letter-spacing: 0.5px; margin-bottom: 22px; box-shadow: var(--shadow-xs); }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 700; line-height: 1.12; color: var(--ash-dark); margin-bottom: 20px; }
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-desc { font-size: 1.02rem; color: var(--ash-light); max-width: 440px; line-height: 1.75; margin-bottom: 36px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+.hero-stats { display: flex; gap: 36px; }
+.hero-stat .num { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--ash-dark); line-height: 1; }
+.hero-stat .lbl { font-size: 0.78rem; color: var(--ash-light); margin-top: 4px; }
+.hero-stat .lbl::before { content: '—  '; color: var(--gold); }
+.hero-right { position: relative; height: 100%; min-height: 540px; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.hero-main-img { width: 400px; height: 400px; border-radius: 50%; object-fit: cover; border: 7px solid white; box-shadow: var(--shadow-lg); animation: floatUp 6s ease-in-out infinite; }
+@keyframes floatUp { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.hero-accent { position: absolute; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: var(--shadow-md); }
+.hero-accent.a1 { width: 120px; height: 120px; top: 80px; left: 40px; animation: floatUp 7s ease-in-out infinite 0.5s; }
+.hero-accent.a2 { width: 100px; height: 100px; bottom: 100px; right: 30px; animation: floatUp 8s ease-in-out infinite 1s; }
+.hero-chip { position: absolute; background: white; padding: 11px 16px; border-radius: 14px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 10px; font-size: 0.8rem; font-weight: 600; color: var(--ash-dark); }
+.hero-chip.c1 { top: 60px; right: 30px; }
+.hero-chip.c2 { bottom: 80px; left: 20px; }
+.hero-chip .ci { font-size: 1.3rem; }
+
+/* FEATURES */
+.features-strip { background: var(--ash-dark); padding: 0; }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); background: rgba(255,255,255,0.06); }
+.feature-item { padding: 30px 24px; text-align: center; color: white; border-right: 1px solid rgba(255,255,255,0.08); transition: background 0.2s; }
+.feature-item:last-child { border-right: none; }
+.feature-item:hover { background: rgba(255,255,255,0.06); }
+.feature-icon { font-size: 1.9rem; margin-bottom: 9px; }
+.feature-label { font-size: 0.88rem; font-weight: 600; }
+.feature-desc { font-size: 0.74rem; opacity: 0.5; margin-top: 3px; }
+
+/* FOOD CARDS */
+.food-card { background: white; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); position: relative; border: 1px solid var(--ash-border); }
+.food-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.food-card-img { position: relative; overflow: hidden; height: 195px; }
+.food-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+.food-card:hover .food-card-img img { transform: scale(1.07); }
+.veg-badge-card { position: absolute; top: 10px; left: 10px; background: white; border-radius: 20px; padding: 3px 9px; font-size: 0.68rem; font-weight: 700; color: var(--green); box-shadow: var(--shadow-xs); display: flex; align-items: center; gap: 4px; }
+.food-card-body { padding: 16px 18px 18px; }
+.food-card-name { font-family: var(--font-display); font-size: 1.12rem; font-weight: 700; color: var(--ash-dark); margin-bottom: 5px; }
+.food-card-desc { font-size: 0.8rem; color: var(--ash-light); line-height: 1.55; margin-bottom: 14px; min-height: 38px; }
+.food-card-footer { display: flex; align-items: center; justify-content: space-between; }
+.food-price { font-size: 1.08rem; font-weight: 700; color: var(--ash-dark); }
+.add-btn { background: var(--ash-dark); color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; transition: var(--transition); }
+.add-btn:hover { background: var(--gold); transform: scale(1.12) rotate(90deg); }
+.qty-ctrl { display: flex; align-items: center; gap: 8px; background: var(--ash-faint); border-radius: 24px; padding: 5px 14px; }
+.qty-btn { background: none; color: var(--ash-dark); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; transition: background 0.18s; }
+.qty-btn:hover { background: var(--ash-border); }
+.qty-num { font-weight: 700; font-size: 0.88rem; min-width: 18px; text-align: center; color: var(--ash-dark); }
+.popular-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+/* SPECIALS */
+.specials-banner { background: linear-gradient(135deg, var(--ash-dark) 0%, #38383f 100%); border-radius: var(--radius-xl); padding: 50px 52px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; color: white; position: relative; overflow: hidden; }
+.specials-banner::before { content: '🍛'; position: absolute; right: 220px; top: -24px; font-size: 9rem; opacity: 0.07; pointer-events: none; }
+.specials-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-light); font-weight: 700; margin-bottom: 10px; }
+.specials-title { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; margin-bottom: 8px; }
+.specials-desc { opacity: 0.65; font-size: 0.92rem; }
+
+/* REVIEWS */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review-card { background: white; border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm); border: 1px solid var(--ash-border); transition: var(--transition); }
+.review-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.review-stars { color: var(--gold); font-size: 0.95rem; margin-bottom: 13px; letter-spacing: 2px; }
+.review-text { font-size: 0.87rem; color: var(--ash); line-height: 1.72; font-style: italic; }
+.review-author { margin-top: 18px; display: flex; align-items: center; gap: 11px; }
+.review-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--ash-dark); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+.review-name { font-weight: 600; font-size: 0.85rem; color: var(--ash-dark); }
+.review-loc { font-size: 0.74rem; color: var(--ash-light); }
+
+/* MENU PAGE */
+.menu-hero { background: linear-gradient(135deg, var(--ash-dark) 0%, #3a3a42 100%); padding: 54px 0 44px; color: white; text-align: center; }
+.menu-hero .section-title { color: white; }
+.menu-hero .section-subtitle { color: rgba(255,255,255,0.65); }
+.menu-hero .gold-line { background: rgba(200,151,58,0.7); margin-left: auto; margin-right: auto; }
+.category-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+.cat-tab { padding: 10px 20px; border-radius: 30px; font-size: 0.86rem; font-weight: 600; border: 2px solid var(--ash-border); background: white; color: var(--ash); transition: var(--transition); cursor: pointer; }
+.cat-tab.active, .cat-tab:hover { background: var(--ash-dark); color: white; border-color: var(--ash-dark); box-shadow: 0 2px 8px rgba(44,44,51,0.15); }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(256px, 1fr)); gap: 20px; }
+.menu-section-heading { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--ash-dark); margin: 44px 0 20px; padding-bottom: 14px; border-bottom: 2px solid var(--ash-border); display: flex; align-items: center; gap: 10px; }
+
+/* CART FAB + DRAWER */
+.cart-fab { position: fixed; bottom: 160px; right: 26px; z-index: 800; background: var(--ash-dark); color: white; width: 58px; height: 58px; border-radius: 50%; display: none; flex-direction: column; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); cursor: pointer; font-size: 1.4rem; transition: var(--transition); }
+.cart-fab.show { display: flex; }
+.cart-fab:hover { background: var(--ash); transform: scale(1.07); }
+.cart-badge { position: absolute; top: -4px; right: -4px; background: var(--gold); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 700; }
+.cart-drawer { position: fixed; top: 0; right: -430px; bottom: 0; width: 420px; max-width: 100vw; background: white; z-index: 1200; box-shadow: var(--shadow-lg); transition: right 0.35s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; }
+.cart-drawer.open { right: 0; }
+.cart-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.42); z-index: 1100; backdrop-filter: blur(2px); }
+.cart-overlay.open { display: block; }
+.cart-header { padding: 20px 24px; border-bottom: 1px solid var(--ash-border); display: flex; align-items: center; justify-content: space-between; }
+.cart-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; }
+.close-btn { background: var(--ash-faint); color: var(--ash-dark); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; transition: var(--transition); }
+.close-btn:hover { background: var(--ash-border); }
+.cart-body { flex: 1; overflow-y: auto; padding: 14px 22px; }
+.cart-empty { text-align: center; padding: 60px 20px; color: var(--ash-light); }
+.cart-empty-icon { font-size: 2.8rem; margin-bottom: 14px; }
+.cart-item { display: flex; align-items: center; gap: 13px; padding: 13px 0; border-bottom: 1px solid var(--ash-faint); }
+.cart-item-img { width: 54px; height: 54px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+.cart-item-info { flex: 1; min-width: 0; }
+.cart-item-name { font-weight: 600; font-size: 0.88rem; color: var(--ash-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cart-item-price { font-size: 0.8rem; color: var(--ash-light); margin-top: 2px; }
+.cart-footer { padding: 18px 22px; border-top: 1px solid var(--ash-border); background: white; }
+.cart-total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.cart-total-label { font-size: 0.84rem; color: var(--ash-light); }
+.cart-total-amount { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--ash-dark); }
+
+/* CHECKOUT */
+.checkout-layout { display: grid; grid-template-columns: 1fr 370px; gap: 28px; }
+.checkout-form-card { background: white; border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid var(--ash-border); }
+.form-group { margin-bottom: 20px; }
+.form-label { display: block; font-size: 0.84rem; font-weight: 600; margin-bottom: 7px; color: var(--ash-dark); }
+.form-control { width: 100%; padding: 12px 14px; border: 2px solid var(--ash-border); border-radius: 10px; font-size: 0.9rem; color: var(--ash-dark); transition: border-color 0.2s; background: white; }
+.form-control:focus { outline: none; border-color: var(--ash-dark); }
+textarea.form-control { resize: vertical; min-height: 88px; }
+.order-summary-card { background: white; border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--ash-border); position: sticky; top: calc(var(--nav-h) + 20px); }
+.summary-item { display: flex; justify-content: space-between; font-size: 0.84rem; padding: 8px 0; border-bottom: 1px solid var(--ash-faint); color: var(--ash); }
+.summary-total { display: flex; justify-content: space-between; font-weight: 700; padding-top: 14px; font-size: 1rem; color: var(--ash-dark); }
+
+/* ═══════════════════════════════════════════════════════════
+   TASK 2 – CHECKOUT ITEM CARDS
+   New classes only. .summary-item and
+   .summary-total are kept for compatibility.
+═══════════════════════════════════════════════════════════ */
+.checkout-item-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--ash-faint);
+}
+.checkout-item-card:last-of-type { border-bottom: none; }
+.checkout-item-img {
+  width: 52px; height: 52px;
+  border-radius: 10px; object-fit: cover; flex-shrink: 0;
+  border: 1px solid var(--ash-faint);
+}
+.checkout-item-meta { flex: 1; min-width: 0; }
+.checkout-item-name {
+  font-weight: 600; font-size: 0.84rem; color: var(--ash-dark);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+.checkout-item-unit-price { font-size: 0.74rem; color: var(--ash-light); }
+.checkout-qty-ctrl {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--ash-faint); border-radius: 20px;
+  padding: 4px 10px; flex-shrink: 0;
+}
+.checkout-qty-btn {
+  background: none; color: var(--ash-dark); width: 20px; height: 20px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 700; cursor: pointer;
+  transition: background 0.15s; border: none; outline: none;
+  font-family: var(--font-body);
+}
+.checkout-qty-btn:hover { background: var(--ash-border); }
+.checkout-qty-num { font-weight: 700; font-size: 0.84rem; min-width: 16px; text-align: center; color: var(--ash-dark); }
+.checkout-item-total { font-weight: 700; font-size: 0.88rem; color: var(--ash-dark); flex-shrink: 0; min-width: 38px; text-align: right; }
+.checkout-summary-divider { border: none; border-top: 2px solid var(--ash-border); margin: 10px 0 4px; }
+.checkout-summary-empty { text-align: center; padding: 20px 0; color: var(--ash-light); font-size: 0.84rem; }
+
+/* ORDER SUCCESS */
+.success-screen { text-align: center; padding: 80px 20px; display: none; }
+.success-screen.show { display: block; animation: fadeUp 0.5s ease; }
+.success-icon-wrap { width: 78px; height: 78px; border-radius: 50%; background: #e6f5ee; color: var(--green); font-size: 2.4rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 22px; }
+.success-title { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 10px; color: var(--ash-dark); }
+
+/* ABOUT */
+.about-hero-section { background: linear-gradient(135deg, var(--ash-faint) 0%, var(--cream) 100%); padding: 80px 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.about-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); }
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.value-card { background: white; border-radius: var(--radius); padding: 28px 22px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid var(--ash-border); transition: var(--transition); }
+.value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+.value-icon { font-size: 2.3rem; margin-bottom: 12px; }
+.value-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: var(--ash-dark); }
+.value-desc { font-size: 0.8rem; color: var(--ash-light); line-height: 1.6; }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.contact-card { background: white; border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid var(--ash-border); }
+.contact-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--ash-faint); }
+.contact-row:last-child { border-bottom: none; }
+.contact-icon-box { width: 42px; height: 42px; border-radius: 10px; background: var(--ash-faint); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; }
+.contact-lbl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--ash-light); font-weight: 600; margin-bottom: 4px; }
+.contact-val { font-weight: 600; font-size: 0.95rem; color: var(--ash-dark); }
+.map-wrap { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); height: 420px; border: 1px solid var(--ash-border); }
+.map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+.hours-list { margin-top: 6px; }
+.hour-row { display: flex; justify-content: space-between; font-size: 0.84rem; padding: 4px 0; }
+.hour-day { color: var(--ash-light); }
+.hour-time { font-weight: 600; color: var(--ash-dark); }
+
+/* FLOATING ACTIONS */
+.float-actions { position: fixed; bottom: 26px; right: 26px; z-index: 900; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.fa-item { position: relative; display: flex; align-items: center; }
+.fa-label { position: absolute; right: 68px; top: 50%; transform: translateY(-50%); background: var(--ash-dark); color: white; padding: 5px 10px; border-radius: 7px; font-size: 0.72rem; font-weight: 600; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+.fa-item:hover .fa-label { opacity: 1; }
+.fa-btn { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: var(--shadow-md); transition: var(--transition); text-decoration: none; cursor: pointer; }
+.wa-fab { background: #25D366; color: white; }
+.wa-fab:hover { background: #20ba58; transform: scale(1.1); }
+.call-fab { background: var(--ash-dark); color: white; }
+.call-fab:hover { background: var(--ash); transform: scale(1.1); }
+
+/* FOOTER */
+footer { background: var(--ash-deeper); color: rgba(255,255,255,0.75); padding: 64px 0 24px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
+.footer-brand { font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; color: white; margin-bottom: 12px; }
+.footer-desc { font-size: 0.84rem; line-height: 1.75; opacity: 0.65; }
+.footer-heading { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--gold-light); margin-bottom: 16px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { font-size: 0.84rem; opacity: 0.65; transition: opacity 0.2s; cursor: pointer; }
+.footer-links a:hover { opacity: 1; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; opacity: 0.45; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { animation: fadeUp 0.6s ease forwards; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-content { padding: 52px 24px; }
+  .popular-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
+  .about-grid, .contact-grid, .checkout-layout { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .order-summary-card { position: static; }
+}
+@media (max-width: 600px) {
+  .popular-grid, .reviews-grid, .values-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .specials-banner { grid-template-columns: 1fr; text-align: center; padding: 36px 24px; }
+  .cart-drawer { width: 100vw; }
+  .hero-stats { gap: 20px; }
+  .section { padding: 60px 0; }
+  .nav-inner { display: flex; align-items: center; justify-content: flex-start; gap: 12px; }
+  .nav-logo { margin-right: auto; flex-shrink: 0; }
+  .hamburger { margin-left: 0; margin-right: 0; }
+}
+@media print {
+  nav, .float-actions, .cart-fab, .cart-drawer, .cart-overlay { display: none !important; }
+  body { background: white; }
+}
+
+/* ═══════════════════════════════════════════
+   NEW – Delivery Fee & Location
+═══════════════════════════════════════════ */
+.delivery-fee-section { margin-top: 6px; }
+.delivery-summary-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.84rem; padding: 6px 0; color: var(--ash);
+}
+.delivery-summary-row.subtotal { border-top: 1px dashed var(--ash-border); padding-top: 10px; margin-top: 4px; }
+.delivery-summary-row .fee-free { color: var(--green); font-weight: 600; }
+.delivery-summary-row .fee-paid { color: var(--red); font-weight: 600; }
+.delivery-distance-note { font-size: 0.72rem; color: var(--ash-light); text-align: center; padding: 4px 0 2px; }
+
+.location-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--ash-faint); color: var(--ash-dark);
+  padding: 10px 16px; border-radius: 9px; font-size: 0.84rem;
+  font-weight: 600; border: 2px solid var(--ash-border);
+  cursor: pointer; transition: var(--transition); width: 100%;
+  justify-content: center;
+}
+.location-btn:hover { border-color: var(--ash); background: white; }
+.location-btn.loading { opacity: 0.6; pointer-events: none; }
+.location-status {
+  font-size: 0.78rem; margin-top: 6px; padding: 0 2px;
+  min-height: 18px; transition: color 0.2s;
+}
+.location-status.success { color: var(--green); }
+.location-status.error { color: var(--red); }
+.location-status.loading { color: var(--ash-light); }
+
+/* Combo sub-items in cart drawer */
+.cart-combo-items {
+  list-style: none; padding: 4px 0 0 2px; margin: 0;
+}
+.cart-combo-items li {
+  font-size: 0.76rem; color: var(--ash-light); padding: 1px 0;
+  display: flex; align-items: center; gap: 5px;
+}
+.cart-combo-items li::before {
+  content: '•'; color: var(--gold); font-weight: 700; font-size: 0.9rem;
+}
+
+/* Combo sub-items in checkout summary */
+.checkout-combo-items {
+  list-style: none; padding: 4px 0 0 0; margin: 0;
+}
+.checkout-combo-items li {
+  font-size: 0.76rem; color: var(--ash); padding: 2px 0;
+  display: flex; align-items: center; gap: 5px;
+}
+.checkout-combo-items li::before {
+  content: '•'; color: var(--gold); font-weight: 700; font-size: 0.9rem;
+}
+
+/* Delivery fee hint text update */
+.delivery-hint {
+  font-size: 0.72rem; color: var(--ash-light);
+  text-align: center; padding: 6px 10px; margin-top: 4px;
+  background: var(--ash-faint); border-radius: 8px;
+}
+
+/* ═══════════════════════════════════════════
+   NEW – Rice Combo Selection Modal
+═══════════════════════════════════════════ */
+.combo-modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); z-index: 2500;
+  align-items: center; justify-content: center;
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+}
+.combo-modal-overlay.open { display: flex; }
+.combo-modal {
+  background: white; border-radius: var(--radius-lg);
+  padding: 28px; max-width: 520px; width: 95vw;
+  max-height: 88vh; overflow-y: auto;
+  box-shadow: var(--shadow-lg); animation: fadeUp 0.3s ease;
+}
+.combo-modal-title {
+  font-family: var(--font-display); font-size: 1.25rem;
+  font-weight: 700; color: var(--ash-dark); margin-bottom: 6px;
+}
+.combo-modal-subtitle {
+  font-size: 0.84rem; color: var(--ash-light); margin-bottom: 18px;
+}
+.combo-options-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; margin-bottom: 20px;
+}
+.combo-option {
+  background: var(--ash-faint); border: 2px solid var(--ash-border);
+  border-radius: var(--radius); padding: 14px 12px;
+  cursor: pointer; transition: var(--transition); text-align: center;
+}
+.combo-option:hover { border-color: var(--ash-light); background: white; }
+.combo-option.selected {
+  border-color: var(--gold); background: var(--gold-faint);
+  box-shadow: 0 0 0 3px rgba(200,151,58,0.15);
+}
+.combo-option-name {
+  font-weight: 600; font-size: 0.88rem; color: var(--ash-dark);
+}
+.combo-option-check {
+  display: none; font-size: 0.7rem; color: var(--gold-dark);
+  margin-top: 4px; font-weight: 700;
+}
+.combo-option.selected .combo-option-check { display: block; }
+.combo-add-btn {
+  width: 100%; padding: 14px; border-radius: 10px; font-size: 0.95rem;
+  font-weight: 700; color: white; background: var(--ash-dark);
+  cursor: pointer; transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(44,44,51,0.22);
+}
+.combo-add-btn:hover { background: var(--ash); transform: translateY(-1px); }
+.combo-add-btn:disabled {
+  opacity: 0.4; pointer-events: none; transform: none;
+}
+.combo-counter { text-align: center; font-size: 0.8rem; color: var(--ash-light); margin-bottom: 14px; font-weight: 500; }
+
+/* Combo sub-items in cart */
+.cart-combo-items, .checkout-combo-items {
+  padding-left: 10px; margin-top: 4px;
+}
+.cart-combo-items li, .checkout-combo-items li {
+  font-size: 0.74rem; color: var(--ash-light); list-style: none;
+  padding: 1px 0;
+}
+.cart-combo-items li::before, .checkout-combo-items li::before {
+  content: '• '; color: var(--gold);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">
+      <div class="nav-logo-img">
+        <img src="images/SRI GOKUL.png" alt="Sri Gokul Foods Logo" style="width:100%;height:100%;object-fit:contain;">
+      </div>
+      <div>
+        <div class="nav-logo-text">Sri Gokul Foods</div>
+        <div class="nav-logo-sub">Tiffin Center</div>
+      </div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a id="nav-home" class="active" onclick="showPage('home')">Home</a>
+      <a id="nav-menu" onclick="showPage('menu')">Menu</a>
+      <a id="nav-order" onclick="showPage('order')">Order</a>
+      <a id="nav-about" onclick="showPage('about')">About</a>
+      <a id="nav-contact" onclick="showPage('contact')">Contact</a>
+      <a class="nav-cta" onclick="showPage('menu')">🛒 Order Now</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!--
+  TASK 1 – RIGHT SIDE DRAWER
+  Overlay: closes drawer when tapped outside.
+  .mobile-menu keeps its original id/class.
+  All original <a> links are unchanged.
+-->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <span class="mobile-menu-brand">🦚 Sri Gokul Foods</span>
+    <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+  </div>
+  <a onclick="showPage('home');toggleMobileMenu()">🏠 Home</a>
+  <a onclick="showPage('menu');toggleMobileMenu()">🍽️ Menu</a>
+  <a onclick="showPage('order');toggleMobileMenu()">🛒 Order</a>
+  <a onclick="showPage('about');toggleMobileMenu()">🌿 About</a>
+  <a onclick="showPage('contact');toggleMobileMenu()">📍 Contact</a>
+</div>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-veg-badge"><span class="veg-dot"></span> 100% Pure Vegetarian</div>
+      <h1 class="hero-title">Taste the<br><em>Tradition</em><br>of South India</h1>
+      <p class="hero-desc">Fresh, authentic South Indian tiffin and chaat prepared daily with love. Crispy dosas, fluffy idlis, tangy chaats — every bite is a celebration.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openMenuModal()">📜 View Menu</button>
+        <button class="btn-secondary" onclick="showPage('order')">🛒 Order Now</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">80+</div><div class="lbl">Menu Items</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="lbl">Vegetarian</div></div>
+        <div class="hero-stat"><div class="num">★ 4.8</div><div class="lbl">Rating</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img class="hero-main-img" src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&h=600&fit=crop&auto=format" alt="South Indian Tiffin" loading="eager">
+      <img class="hero-accent a1" src="https://images.unsplash.com/photo-1630383249896-424e482df921?w=200&h=200&fit=crop&auto=format" alt="Idli">
+      <img class="hero-accent a2" src="https://images.unsplash.com/photo-1567337710282-00832b415979?w=200&h=200&fit=crop&auto=format" alt="Dosa">
+      <div class="hero-chip c1"><span class="ci">🚴</span> Fast Home Delivery</div>
+      <div class="hero-chip c2"><span class="ci">🌿</span> Fresh Every Day</div>
+    </div>
+  </section>
+
+  <div class="features-strip">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item"><div class="feature-icon">🌿</div><div class="feature-label">100% Vegetarian</div><div class="feature-desc">Pure veg, always</div></div>
+        <div class="feature-item"><div class="feature-icon">🚴</div><div class="feature-label">Home Delivery</div><div class="feature-desc">Fresh to your door</div></div>
+        <div class="feature-item"><div class="feature-icon">⏰</div><div class="feature-label">Open Daily</div><div class="feature-desc">7 AM – 9 PM</div></div>
+        <div class="feature-item"><div class="feature-icon">❤️</div><div class="feature-label">Made with Love</div><div class="feature-desc">Traditional recipes</div></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="background:white;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;">
+        <div class="label-tag">Customer Favourites</div>
+        <h2 class="section-title">Most Loved Dishes</h2>
+        <div class="gold-line" style="margin:14px auto 0;"></div>
+      </div>
+      <div class="popular-grid" id="popularGrid"></div>
+      <div style="text-align:center; margin-top:40px;">
+        <button class="btn-primary" onclick="showPage('menu')">View Complete Menu →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="specials-banner">
+        <div>
+          <div class="specials-label">Daily Special</div>
+          <div class="specials-title">Breakfast Combo — Idli + Vada + Filter Coffee</div>
+          <div class="specials-desc">Start your morning right. Steaming hot breakfast served from 7 AM daily.</div>
+        </div>
+        <button class="btn-gold" onclick="showPage('order')">Order Breakfast →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:white;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;">
+        <div class="label-tag">Happy Customers</div>
+        <h2 class="section-title">What People Say</h2>
+        <div class="gold-line" style="margin:14px auto 0;"></div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-text">"Best dosa I've had outside Chennai! The coconut chutney is absolutely divine. My family orders every Sunday morning."</p>
+          <div class="review-author"><div class="review-avatar">R</div><div><div class="review-name">Ramesh K.</div><div class="review-loc">Quthbullapur</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-text">"The pav bhaji is top class! Delivery was super fast and food was piping hot. Sri Gokul Foods is our go-to for evening snacks."</p>
+          <div class="review-author"><div class="review-avatar">S</div><div><div class="review-name">Sunita P.</div><div class="review-loc">Bachupally</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★ ★ ★ ★ ★</div>
+          <p class="review-text">"Sev Puri and Pani Puri are our absolute favourites! Genuine street food taste with great hygiene. Highly recommended!"</p>
+          <div class="review-author"><div class="review-avatar">P</div><div><div class="review-name">Priya M.</div><div class="review-loc">Nizampet</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">🦚 Sri Gokul Foods</div>
+          <p class="footer-desc">Serving authentic South Indian tiffin and chaat with love and tradition. 100% vegetarian, always fresh, always delicious.</p>
+          <div style="margin-top:18px;display:flex;gap:14px;">
+            <a href="https://wa.me/918688332105" target="_blank" style="color:white;font-size:1.5rem;opacity:0.65;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.65">💬</a>
+            <a href="tel:+918688332105" style="color:white;font-size:1.5rem;opacity:0.65;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.65">📞</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('menu')">Menu</a></li>
+            <li><a onclick="showPage('order')">Order Online</a></li>
+            <li><a onclick="showPage('about')">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Categories</div>
+          <ul class="footer-links">
+            <li><a onclick="showPage('menu')">Tiffin Items</a></li>
+            <li><a onclick="showPage('menu')">Chaat</a></li>
+            <li><a onclick="showPage('menu')">Pav Bhaji</a></li>
+            <li><a onclick="showPage('menu')">Vada Pav</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contact</div>
+          <ul class="footer-links" style="list-style:none;">
+            <li style="margin-bottom:9px;font-size:.84rem;opacity:.65;">📞 8688332105</li>
+            <li style="margin-bottom:9px;font-size:.84rem;opacity:.65;">🕐 7 AM – 9 PM (Daily)</li>
+            <li style="margin-bottom:9px;font-size:.84rem;opacity:.65;">📍 Quthbullapur, Hyderabad</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 Sri Gokul Foods. All rights reserved.</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- MENU -->
+<div class="page" id="page-menu">
+  <div class="menu-hero">
+    <div class="container">
+      <h1 class="section-title">Our Menu</h1>
+      <p class="section-subtitle">Fresh, authentic flavours prepared with love every day</p>
+      <div class="gold-line" style="margin:14px auto 0;"></div>
+    </div>
+  </div>
+  <section class="section" style="padding-top:36px;">
+    <div class="container">
+      <div class="category-tabs" id="categoryTabs"></div>
+      <div id="menuContent"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ORDER / CHECKOUT -->
+<div class="page" id="page-order">
+  <section class="section" style="background:var(--ash-faint);min-height:100vh;padding-top:40px;">
+    <div class="container">
+      <div style="margin-bottom:32px;">
+        <h1 class="section-title">Checkout</h1>
+        <div class="gold-line"></div>
+      </div>
+      <div id="orderFormWrap">
+        <div class="checkout-layout">
+          <div class="checkout-form-card">
+            <h3 style="font-family:var(--font-display);font-size:1.35rem;font-weight:700;margin-bottom:24px;">Delivery Details</h3>
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-control" id="custName" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" class="form-control" id="custPhone" placeholder="10-digit mobile number" maxlength="10">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Delivery Address *</label>
+              <textarea class="form-control" id="custAddress" placeholder="House no., Street, Area, Landmark..."></textarea>
+            </div>
+            <!-- NEW: GPS Location Button -->
+            <div class="form-group">
+              <label class="form-label">📍 Your Location (for delivery fee)</label>
+              <button type="button" class="location-btn" id="getLocationBtn" onclick="getUserLocation()">
+                📍 Use My Location
+              </button>
+              <div class="location-status" id="locationStatus"></div>
+            </div>
+            <!-- NEW: Additional Instructions -->
+            <div class="form-group">
+              <label class="form-label">Additional Instructions (optional)</label>
+              <textarea class="form-control" id="custInstructions" placeholder="E.g. Less spicy, No onion, Call on arrival..." rows="3"></textarea>
+            </div>
+            <div id="cartEmptyMsg" style="display:none;background:var(--ash-faint);padding:18px;border-radius:10px;text-align:center;color:var(--ash-light);margin-bottom:18px;border:1.5px dashed var(--ash-border);">
+              Your cart is empty. Please <a onclick="showPage('menu')" style="color:var(--ash-dark);font-weight:700;cursor:pointer;text-decoration:underline;">add items from the menu</a> first.
+            </div>
+            <button class="btn-primary" onclick="placeOrder()" style="width:100%;justify-content:center;font-size:1rem;padding:15px;">Place Order →</button>
+          </div>
+
+          <!--
+            TASK 2 – Enhanced Order Summary
+            #orderSummaryItems now rendered as
+            .checkout-item-card rows with image +
+            inline qty controls. .summary-total and
+            #orderTotal are completely unchanged.
+          -->
+          <div>
+            <div class="order-summary-card">
+              <h3 style="font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin-bottom:16px;">Order Summary</h3>
+              <div id="orderSummaryItems"></div>
+              <hr class="checkout-summary-divider">
+              <!-- NEW: Delivery fee breakdown -->
+              <div class="delivery-fee-section" id="deliveryFeeSection">
+                <div class="delivery-summary-row subtotal">
+                  <span>Subtotal</span>
+                  <span id="orderSubtotal">₹0</span>
+                </div>
+                <div class="delivery-summary-row">
+                  <span>Delivery Fee</span>
+                  <span id="deliveryFeeDisplay" class="fee-free">₹0 (Free)</span>
+                </div>
+                <div class="delivery-distance-note" id="deliveryDistanceNote"></div>
+              </div>
+              <div class="summary-total" style="margin-top:4px;">
+                <span>Total</span>
+                <span id="orderTotal">₹0</span>
+              </div>
+              <div id="deliveryInfoBanner" style="margin-top:14px;padding:12px;background:var(--ash-faint);border-radius:9px;font-size:0.78rem;color:var(--ash-light);text-align:center;">
+                💚 Free delivery within 3 KM · Use location for exact fee
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon-wrap">✓</div>
+        <h2 class="success-title">Order Placed!</h2>
+        <p style="color:var(--ash-light);margin-bottom:6px;">Your order has been received.</p>
+        <p id="orderNumDisplay" style="font-weight:700;font-size:1.05rem;margin-bottom:32px;color:var(--ash-dark);"></p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn-primary" onclick="showPage('menu')">Order More Items</button>
+          <a href="https://wa.me/918309130431" target="_blank" class="btn-secondary">💬 Contact on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <section class="about-hero-section">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="label-tag">Our Story</div>
+          <h1 class="section-title">Bringing South India<br>to Your Doorstep</h1>
+          <div class="gold-line"></div>
+          <p style="color:var(--ash);line-height:1.82;margin-bottom:18px;">Sri Gokul Foods was born from a simple passion — sharing the authentic flavours of South Indian cuisine with the people of Hyderabad. Named after Lord Krishna's divine abode, our restaurant embodies purity, tradition, and devotion to quality.</p>
+          <p style="color:var(--ash);line-height:1.82;margin-bottom:28px;">Every item on our menu is prepared using recipes passed down through generations. We believe great food is made with love, fresh ingredients, and an honest heart. From crispy dosas to flavourful chaats — every bite is a journey.</p>
+          <div style="display:flex;gap:28px;flex-wrap:wrap;">
+            <div><div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--gold);">80+</div><div style="font-size:0.78rem;color:var(--ash-light);">Menu Items</div></div>
+            <div><div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--gold);">1000+</div><div style="font-size:0.78rem;color:var(--ash-light);">Happy Customers</div></div>
+            <div><div style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--gold);">Daily</div><div style="font-size:0.78rem;color:var(--ash-light);">Fresh Cooked</div></div>
+          </div>
+        </div>
+        <div>
+          <img class="about-img" src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&h=450&fit=crop&auto=format" alt="South Indian Kitchen" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="background:white;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:44px;">
+        <h2 class="section-title">Our Values</h2>
+        <div class="gold-line" style="margin:14px auto 0;"></div>
+      </div>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-icon">🌿</div><div class="value-name">Pure Vegetarian</div><div class="value-desc">100% vegetarian kitchen. No compromises, ever.</div></div>
+        <div class="value-card"><div class="value-icon">🌾</div><div class="value-name">Fresh Daily</div><div class="value-desc">Prepared fresh every morning. No leftovers.</div></div>
+        <div class="value-card"><div class="value-icon">👨‍🍳</div><div class="value-name">Traditional Recipes</div><div class="value-desc">Authentic recipes passed down through generations.</div></div>
+        <div class="value-card"><div class="value-icon">🧹</div><div class="value-name">Hygienic Kitchen</div><div class="value-desc">Strict hygiene standards. Your health is priority.</div></div>
+        <div class="value-card"><div class="value-icon">🚴</div><div class="value-name">Fast Delivery</div><div class="value-desc">Hot food delivered quickly to your home.</div></div>
+        <div class="value-card"><div class="value-icon">💖</div><div class="value-name">Affordable Prices</div><div class="value-desc">Great food at honest prices for everyone.</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <section class="section" style="background:var(--ash-faint);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:52px;">
+        <h1 class="section-title">Find Us</h1>
+        <div class="gold-line" style="margin:14px auto 0;"></div>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-card">
+            <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:20px;">Contact Details</h3>
+            <div class="contact-row">
+              <div class="contact-icon-box">📞</div>
+              <div>
+                <div class="contact-lbl">Phone & WhatsApp</div>
+                <div class="contact-val">8688332105</div>
+                <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+                  <a href="tel:+918309130431" class="btn-primary" style="padding:9px 18px;font-size:0.82rem;">📞 Call Now</a>
+                  <a href="https://wa.me/918688332105?text=Hi! I'd like to order from Sri Gokul Foods." target="_blank" class="btn-secondary" style="padding:9px 18px;font-size:0.82rem;">💬 WhatsApp</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon-box">📍</div>
+              <div><div class="contact-lbl">Location</div><div class="contact-val">Quthbullapur, Hyderabad, Telangana</div></div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon-box">🕐</div>
+              <div>
+                <div class="contact-lbl">Opening Hours</div>
+                <div class="hours-list">
+                  <div class="hour-row"><span class="hour-day">Mon – Fri</span><span class="hour-time">7:00 AM – 9:00 PM</span></div>
+                  <div class="hour-row"><span class="hour-day">Saturday</span><span class="hour-time">7:00 AM – 9:00 PM</span></div>
+                  <div class="hour-row"><span class="hour-day">Sunday</span><span class="hour-time">7:00 AM – 9:00 PM</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=17.5420556,78.2292500&z=16&output=embed" allowfullscreen loading="lazy" title="Sri Gokul Foods Location"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <div class="cart-title">🛒 Your Cart</div>
+    <button class="close-btn" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total Amount</span>
+      <span class="cart-total-amount" id="cartTotalDisplay">₹0</span>
+    </div>
+    <button class="btn-primary" onclick="goCheckout()" style="width:100%;justify-content:center;padding:14px;font-size:0.95rem;">Proceed to Checkout →</button>
+  </div>
+</div>
+<div class="cart-fab" id="cartFab" onclick="openCart()">
+  🛒 <div class="cart-badge" id="cartBadge">0</div>
+</div>
+
+<!-- FLOAT BUTTONS -->
+<div class="float-actions">
+  <div class="fa-item">
+    <span class="fa-label">Chat on WhatsApp</span>
+    <a href="https://wa.me/918309130431?text=Hi! I'd like to order from Sri Gokul Foods." target="_blank" class="fa-btn wa-fab" title="WhatsApp">💬</a>
+  </div>
+  <div class="fa-item">
+    <span class="fa-label">Call Us Now</span>
+    <a href="tel:+918309130431" class="fa-btn call-fab" title="Call">📞</a>
+  </div>
+</div>
+
+<!-- FULL MENU MODAL -->
+<div class="modal-overlay" id="fullMenuModal" style="display:none;z-index:3000;align-items:center;justify-content:center;" onclick="closeMenuModal()">
+  <div class="modal" style="max-width:600px;width:95%;padding:20px;background:white;border-radius:20px;display:flex;flex-direction:column;max-height:90vh;" onclick="event.stopPropagation()">
+    <div class="modal-header" style="margin-bottom:15px;display:flex;justify-content:space-between;align-items:center;">
+      <div class="modal-title" style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;">Sri Gokul Foods Menu</div>
+      <button class="close-btn" onclick="closeMenuModal()">✕</button>
+    </div>
+    <div style="flex:1;overflow-y:auto;display:flex;justify-content:center;background:#f9f9f9;border-radius:10px;border:1px solid var(--ash-border);">
+      <img src="menu_gokul.jpeg" alt="Full Menu Card" style="max-width:100%;height:auto;object-fit:contain;display:block;">
+    </div>
+    <div style="text-align:center;margin-top:15px;">
+      <button class="btn-primary" onclick="closeMenuModal()" style="padding:10px 30px;">Back to Website</button>
+    </div>
+  </div>
+</div>
+
+<!-- NEW: Rice Combo Selection Modal -->
+<div class="combo-modal-overlay" id="comboModalOverlay" onclick="closeComboModal()">
+  <div class="combo-modal" onclick="event.stopPropagation()">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <div class="combo-modal-title" id="comboModalTitle">Rice Combo</div>
+      <button class="close-btn" onclick="closeComboModal()">✕</button>
+    </div>
+    <div class="combo-modal-subtitle" id="comboModalSubtitle">Select any 2 rice items</div>
+    <div class="combo-counter" id="comboCounter">Selected: 0 / 2</div>
+    <div class="combo-options-grid" id="comboOptionsGrid"></div>
+    <button class="combo-add-btn" id="comboAddBtn" disabled onclick="addComboToCart()">Add Combo to Cart</button>
+  </div>
+</div>
+
+<style>
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(3px); }
+.modal-overlay.open { display: flex; }
+.modal { background: white; border-radius: var(--radius-lg); padding: 32px; max-width: 560px; width: 95vw; max-height: 88vh; overflow-y: auto; box-shadow: var(--shadow-lg); animation: fadeUp 0.3s ease; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+.modal-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; }
+</style>
+
+<script>
+const API = 'http://localhost:5000/api';
+
+const MENU = {
+  "Tiffin": [
+    { id:'t1', name:'Idli', price:35, desc:'Soft, steamed rice cakes served with sambar & fresh coconut chutney', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'t2', name:'Sambar Idly', price:40, desc:'Soft idlis with hot sambar curry and coconut chutney', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'t3', name:'Ghee Idly', price:50, desc:'Soft idlis drizzled with pure ghee and served with sambar', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'t4', name:'Wada (2pcs)', price:35, desc:'Crispy golden lentil donuts served with sambar & green chutney', img:'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop&auto=format' },
+    { id:'t5', name:'Sambar Wada (2pcs)', price:40, desc:'2 crispy vadas with hot sambar curry', img:'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop&auto=format' },
+    { id:'t6', name:'Dahi Wada (2pcs)', price:40, desc:'2 crispy vadas soaked in creamy yogurt with chutneys', img:'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop&auto=format' },
+    { id:'t7', name:'Mysore Bajji (4pcs)', price:35, desc:'4 crispy potato-filled fritters served with chutney', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+    { id:'t8', name:'Onion Bonda (4pcs)', price:35, desc:'4 crispy onion fritters in spiced coating', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+    { id:'t9', name:'Upma', price:50, desc:'Semolina cooked with fresh vegetables and tempered spices', img:'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&h=300&fit=crop&auto=format' },
+    { id:'t10', name:'Poori', price:40, desc:'Deep-fried puffed bread served with potato curry', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'t11', name:'Chapathi', price:50, desc:'Soft unleavened flatbread cooked on griddle with butter', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'t12', name:'Parota', price:50, desc:'Layered, flaky Indian paratha with ghee', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'t13', name:'Plain Dosa', price:35, desc:'Thin, crispy fermented rice crepe with chutney & sambar', img:'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&h=300&fit=crop&auto=format' },
+    { id:'t14', name:'Onion Dosa', price:35, desc:'Crispy dosa topped with caramelized onions & spices', img:'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&h=300&fit=crop&auto=format' },
+    { id:'t15', name:'Masala Dosa', price:35, desc:'Crispy dosa stuffed with spiced potato filling', img:'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&h=300&fit=crop&auto=format' },
+    { id:'t16', name:'Upma Dosa', price:35, desc:'Dosa made with semolina base for extra crispiness', img:'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&h=300&fit=crop&auto=format' },
+    { id:'t17', name:'Onion Pesarattu', price:35, desc:'Green moong dal crepe topped with onions', img:'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop&auto=format' },
+    { id:'t18', name:'Masala Pesarattu', price:35, desc:'Green moong dal crepe with spiced potato filling', img:'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop&auto=format' },
+    { id:'t19', name:'Upma Pesarattu', price:35, desc:'Green moong dal crepe made with semolina base', img:'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop&auto=format' },
+    { id:'t20', name:'Plain Rava Dosa', price:35, desc:'Crispy, netted semolina crepe', img:'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&h=300&fit=crop&auto=format' },
+    { id:'t21', name:'Onion Rava Dosa', price:35, desc:'Crispy, netted semolina crepe topped with onions', img:'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&h=300&fit=crop&auto=format' },
+    { id:'t22', name:'Onion Uttappa', price:35, desc:'Thick crepe made with rice-lentil batter and onions', img:'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&h=300&fit=crop&auto=format' },
+    { id:'t23', name:'Set Dosa', price:35, desc:'Soft dosa served as a set with sambar & chutneys', img:'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&h=300&fit=crop&auto=format' },
+    { id:'t24', name:'Paneer Dosa', price:40, desc:'Dosa stuffed with soft paneer cheese and vegetables', img:'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&h=300&fit=crop&auto=format' },
+    { id:'t25', name:'Ghee Masala Dosa', price:45, desc:'Masala dosa drizzled with pure ghee', img:'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&h=300&fit=crop&auto=format' },
+    { id:'t26', name:'Ghee Onion Dosa', price:45, desc:'Onion dosa generously coated with ghee', img:'https://images.unsplash.com/photo-1568236658978-181f61e97d28?w=400&h=300&fit=crop&auto=format' },
+    { id:'t27', name:'Ghee Karam Dosa', price:35, desc:'Spiced dosa prepared with ghee for extra flavor', img:'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&h=300&fit=crop&auto=format' },
+    { id:'t28', name:'Butter Onion Dosa', price:40, desc:'Onion dosa topped with fresh butter', img:'https://images.unsplash.com/photo-1567337710282-00832b415979?w=400&h=300&fit=crop&auto=format' },
+    { id:'t29', name:'Butter Onion Dosa (Premium)', price:45, desc:'Premium version with extra butter and quality ingredients', img:'https://images.unsplash.com/photo-1568236658978-181f61e97d28?w=400&h=300&fit=crop&auto=format' },
+    { id:'t30', name:'Butter Masala Dosa', price:45, desc:'Masala dosa topped with generous butter coating', img:'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Tiffin Combo": [
+    { id:'tc1', name:'1 Idly + 1/2 Plate Upma', price:45, desc:'Soft idly with half plate of savory upma', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'tc2', name:'1 Idly + 1 Wada', price:35, desc:'1 soft idly + 1 crispy wada with sambar & chutney', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'tc3', name:'1 Idly + 1 Wada Sambar', price:35, desc:'Idly and wada served together in sambar', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'tc4', name:'2 Idly + 1 Wada', price:50, desc:'2 soft idlis + 1 crispy wada with complete accompaniments', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'tc5', name:'2 Idly + 1 Wada Sambar', price:55, desc:'2 idlis + 1 wada served in sambar', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'tc6', name:'1 Idly + 2 Wada', price:55, desc:'1 soft idly + 2 crispy wadas', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'tc7', name:'1 Idly + 2 Mysore Bajji', price:50, desc:'Idly with 2 crispy Mysore bajjis', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'tc8', name:'1 Idly + 2 Onion Bonda', price:50, desc:'Idly with 2 onion bondas', img:'https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&h=300&fit=crop&auto=format' },
+    { id:'tc9', name:'1 Wada + 2 Bonda', price:35, desc:'1 wada + 2 bondas - budget-friendly combo', img:'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Rice Item": [
+    { id:'r1', name:'Veg. Biryani', price:60, desc:'Aromatic basmati rice cooked with fresh vegetables and spices', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'r2', name:'Tomato Rice', price:50, desc:'Fluffy rice cooked with tomato puree and spices', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'r3', name:'Gongura Rice', price:50, desc:'Andhra specialty - tangy gongura leaves with rice', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'r4', name:'Sambar Rice', price:50, desc:'Rice cooked with sambar spice mix and vegetables', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'r5', name:'Zeera Rice', price:50, desc:'Fragrant cumin-flavored rice with whole spices', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'r6', name:'Veg Fried Rice', price:50, desc:'Stir-fried rice with mixed vegetables', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'r7', name:'Lemon Rice', price:50, desc:'Tangy lemon-flavored rice with peanuts and curry leaves', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'r8', name:'Curd Rice', price:50, desc:'Cooling curd rice with tempered spices - perfect for lunch', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Rice Combo": [
+    { id:'rc1', name:'Combo (Any-2)', price:60, desc:'Choose any 2 rice items from our selection', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'rc2', name:'Combo (Any-3)', price:60, desc:'Choose any 3 rice items - value pack', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'rc3', name:'Combo Parcel (Any-2)', price:70, desc:'Any 2 rice items in parcel packing - ready to take away', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'rc4', name:'Combo Parcel (Any-3)', price:70, desc:'Any 3 rice items in parcel packing', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Meals": [
+    { id:'m1', name:'Full Meals', price:90, desc:'Complete meal with rice, curry, and accompaniments', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'m2', name:'Meals Parcel', price:100, desc:'Full meals packed for takeaway', img:'https://images.unsplash.com/photo-1609501676725-7186f017a4b1?w=400&h=300&fit=crop&auto=format' },
+    { id:'m3', name:'Double Ka Meetha', price:40, desc:'Traditional Indian dessert - sweet bread pudding with khoya', img:'https://images.unsplash.com/photo-1585399966569-32143d182099?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Chaat": [
+    { id:'c1', name:'Sev Puri', price:60, desc:'Crispy puris topped with potatoes, chutneys, sev & pomegranate', img:'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop&auto=format' },
+    { id:'c2', name:'Dahi Puri', price:60, desc:'Hollow puris filled with creamy yogurt, chutneys & spicy masala', img:'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop&auto=format' },
+    { id:'c3', name:'Dahi Papdi', price:60, desc:'Crispy papdis layered with yogurt, tamarind & mint chutney', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+    { id:'c4', name:'Dahi Samosa', price:60, desc:'Crispy samosa dunked in creamy dahi with sweet & spicy chutneys', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'c5', name:'Bhel Puri', price:60, desc:'Puffed rice with vegetables, sev and tangy tamarind chutneys', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+    { id:'c6', name:'Pani Puri (8 pcs)', price:30, desc:'8 crispy hollow puris with spicy tangy jaljeera pani', img:'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop&auto=format' },
+    { id:'c7', name:'Kachori', price:30, desc:'Flaky pastry stuffed with spiced lentil or onion filling', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Pav Bhaji": [
+    { id:'p1', name:'Pav Bhaji', price:60, desc:'Classic Mumbai street food — spiced mashed veggies with butter pav', img:'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop&auto=format' },
+    { id:'p2', name:'Butter Pav Bhaji', price:80, desc:'Extra butter loaded pav bhaji — rich, indulgent & iconic', img:'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop&auto=format' },
+    { id:'p3', name:'Cheese Pav Bhaji', price:80, desc:'Pav bhaji topped with generous grated processed cheese', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+    { id:'p4', name:'Masala Pav Bhaji', price:80, desc:'Extra spicy pav bhaji loaded with green masala for heat lovers', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Vada Pav": [
+    { id:'v1', name:'Vada Pav', price:40, desc:'Authentic Mumbai-style spiced potato fritter in a soft bun', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'v2', name:'Butter Vada Pav', price:40, desc:'Classic vada pav with extra butter & dry garlic chutney', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'v3', name:'Cheese Vada Pav', price:50, desc:'Vada pav with melted cheese, chutneys and a secret sauce', img:'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=300&fit=crop&auto=format' },
+    { id:'v4', name:'Paneer Vada Pav', price:60, desc:'Paneer-stuffed vada in soft pav — a premium treat', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Veg Sandwich": [
+    { id:'s1', name:'Veg Sandwich', price:40, desc:'Fresh vegetables in toasted bread with mint chutney & butter', img:'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=400&h=300&fit=crop&auto=format' },
+    { id:'s2', name:'Veg Mayo & Cheese', price:80, desc:'Loaded sandwich with mayo, cheese, fresh vegetables & herbs', img:'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=400&h=300&fit=crop&auto=format' },
+    { id:'s3', name:'Veg Cheese Club', price:60, desc:'Triple-decker toasted sandwich with cheese and crunchy vegetables', img:'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=400&h=300&fit=crop&auto=format' },
+    { id:'s4', name:'Bread Butter', price:30, desc:'Soft fresh bread generously spread with creamy butter', img:'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=400&h=300&fit=crop&auto=format' },
+    { id:'s5', name:'Bread Jam', price:30, desc:'Fresh bread with your choice of mixed fruit or strawberry jam', img:'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=400&h=300&fit=crop&auto=format' },
+  ],
+  "Snacks & Specials": [
+    { id:'sp1', name:'Cutlet Ragada', price:50, desc:'Crispy potato cutlet on a bed of spicy white peas ragada', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+    { id:'sp2', name:'Samosa Ragada', price:50, desc:'Flaky samosa served on spicy white peas curry with chutneys', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'sp3', name:'Kachori Ragada', price:60, desc:'Crispy kachori with spiced white peas curry & chutneys', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'sp4', name:'Plain Samosa', price:20, desc:'Crispy pastry filled with spiced potatoes and green peas', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'sp5', name:'Extra Pav', price:20, desc:'Additional soft fresh pav bread — perfect with any gravy', img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop&auto=format' },
+    { id:'sp6', name:'Extra Chutney', price:10, desc:'Extra serving of coconut, mint, or tamarind chutney', img:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop&auto=format' },
+  ]
+};
+
+const POPULAR_IDS = ['t15', 'p1', 'c6', 't4', 'v1', 'tc5'];
+const CATEGORY_EMOJI = { 'Tiffin':'🍽️', 'Tiffin Combo':'🥡', 'Rice Item':'🍚', 'Rice Combo':'🍲', 'Meals':'🍛', 'Chaat':'🥗', 'Pav Bhaji':'🍛', 'Vada Pav':'🍔', 'Veg Sandwich':'🥪', 'Snacks & Specials':'⭐' };
+
+/* ── CART (all original logic, unchanged) ── */
+let cart = JSON.parse(localStorage.getItem('sgCart') || '[]');
+
+function saveCart() { localStorage.setItem('sgCart', JSON.stringify(cart)); }
+function cartCount() { return cart.reduce((s, i) => s + i.qty, 0); }
+function cartTotal() { return cart.reduce((s, i) => s + i.price * i.qty, 0); }
+function itemQty(id) { const f = cart.find(i => i.id === id); return f ? f.qty : 0; }
+
+function addToCart(id) {
+  const item = Object.values(MENU).flat().find(i => i.id === id);
+  if (!item) return;
+  const ex = cart.find(i => i.id === id);
+  if (ex) ex.qty++;
+  else cart.push({ ...item, qty: 1 });
+  saveCart(); updateCartUI(); refreshCtrl(id);
+}
+
+function removeFromCart(id) {
+  const ex = cart.find(i => i.id === id);
+  if (!ex) return;
+  ex.qty--;
+  if (ex.qty <= 0) cart = cart.filter(i => i.id !== id);
+  saveCart(); updateCartUI(); refreshCtrl(id);
+}
+
+function updateCartUI() {
+  const c = cartCount();
+  document.getElementById('cartBadge').textContent = c;
+  document.getElementById('cartFab').classList.toggle('show', c > 0);
+  renderCartBody();
+  renderOrderSummary();
+}
+
+function refreshCtrl(id) {
+  const qty = itemQty(id);
+  document.querySelectorAll(`[data-ctrl="${id}"]`).forEach(el => {
+    if (qty === 0) {
+      el.innerHTML = `<button class="add-btn" onclick="addToCart('${id}')">+</button>`;
+    } else {
+      el.innerHTML = `<div class="qty-ctrl"><button class="qty-btn" onclick="removeFromCart('${id}')">−</button><span class="qty-num">${qty}</span><button class="qty-btn" onclick="addToCart('${id}')">+</button></div>`;
+    }
+  });
+}
+
+function renderCartBody() {
+  const body = document.getElementById('cartBody');
+  document.getElementById('cartTotalDisplay').textContent = '₹' + cartTotal();
+  if (!cart.length) {
+    body.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Your cart is empty</p><p style="margin-top:6px;font-size:0.8rem;">Add items from the menu</p></div>`;
+    return;
+  }
+  body.innerHTML = cart.map(i => `
+    <div class="cart-item">
+      <img class="cart-item-img" src="${i.img}" alt="${i.name}" loading="lazy">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${i.name}</div>
+        <div class="cart-item-price">₹${i.price} × ${i.qty} = ₹${i.price * i.qty}</div>
+      </div>
+      <div class="qty-ctrl">
+        <button class="qty-btn" onclick="removeFromCart('${i.id}')">−</button>
+        <span class="qty-num">${i.qty}</span>
+        <button class="qty-btn" onclick="addToCart('${i.id}')">+</button>
+      </div>
+    </div>`).join('');
+}
+
+function renderOrderSummary() {
+  const el  = document.getElementById('orderSummaryItems');
+  const tot = document.getElementById('orderTotal');
+  if (!el) return;
+
+  if (!cart.length) {
+    el.innerHTML = '<div class="checkout-summary-empty">No items yet.<br>Add items from the menu first.</div>';
+    if (tot) tot.textContent = '₹0';
+    return;
+  }
+
+  el.innerHTML = cart.map(i => `
+    <div class="checkout-item-card">
+      <img class="checkout-item-img" src="${i.img}" alt="${i.name}" loading="lazy"
+           onerror="this.style.display='none'">
+      <div class="checkout-item-meta">
+        <div class="checkout-item-name" title="${i.name}">${i.name}</div>
+        <div class="checkout-item-unit-price">₹${i.price} each</div>
+      </div>
+      <div class="checkout-qty-ctrl">
+        <button class="checkout-qty-btn" onclick="removeFromCart('${i.id}')">−</button>
+        <span class="checkout-qty-num">${i.qty}</span>
+        <button class="checkout-qty-btn" onclick="addToCart('${i.id}')">+</button>
+      </div>
+      <div class="checkout-item-total">₹${i.price * i.qty}</div>
+    </div>`).join('');
+
+  if (tot) tot.textContent = '₹' + cartTotal();
+}
+
+/* ── FOOD CARD (unchanged) ── */
+function foodCard(item) {
+  const qty = itemQty(item.id);
+  const ctrl = qty === 0
+    ? `<button class="add-btn" onclick="addToCart('${item.id}')">+</button>`
+    : `<div class="qty-ctrl"><button class="qty-btn" onclick="removeFromCart('${item.id}')">−</button><span class="qty-num">${qty}</span><button class="qty-btn" onclick="addToCart('${item.id}')">+</button></div>`;
+  return `
+    <div class="food-card">
+      <div class="food-card-img">
+        <img src="${item.img}" alt="${item.name}" loading="lazy">
+        <div class="veg-badge-card"><span class="veg-dot"></span> Veg</div>
+      </div>
+      <div class="food-card-body">
+        <div class="food-card-name">${item.name}</div>
+        <div class="food-card-desc">${item.desc}</div>
+        <div class="food-card-footer">
+          <div class="food-price">₹${item.price}</div>
+          <div data-ctrl="${item.id}">${ctrl}</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ── HOME POPULAR (unchanged) ── */
+function renderPopular() {
+  const all = Object.values(MENU).flat();
+  const items = POPULAR_IDS.map(id => all.find(i => i.id === id)).filter(Boolean);
+  document.getElementById('popularGrid').innerHTML = items.map(foodCard).join('');
+}
+
+/* ── MENU PAGE (unchanged) ── */
+let activeCategory = 'All';
+function renderMenuPage() {
+  const cats = ['All', ...Object.keys(MENU)];
+  document.getElementById('categoryTabs').innerHTML = cats.map(c =>
+    `<button class="cat-tab ${c === activeCategory ? 'active' : ''}" onclick="filterCat('${c}')">${c}</button>`
+  ).join('');
+  renderMenuItems();
+}
+function filterCat(cat) {
+  activeCategory = cat;
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.toggle('active', b.textContent === cat));
+  renderMenuItems();
+}
+function renderMenuItems() {
+  let html = '';
+  if (activeCategory === 'All') {
+    for (const [cat, items] of Object.entries(MENU)) {
+      html += `<div class="menu-section-heading">${CATEGORY_EMOJI[cat] || '🌿'} ${cat}</div>`;
+      html += `<div class="menu-grid">${items.map(foodCard).join('')}</div>`;
+    }
+  } else {
+    html = `<div class="menu-grid">${(MENU[activeCategory] || []).map(foodCard).join('')}</div>`;
+  }
+  document.getElementById('menuContent').innerHTML = html;
+}
+
+/* ── PAGE ROUTING (unchanged) ── */
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('#navLinks a[id]').forEach(a => a.classList.remove('active'));
+  const nl = document.getElementById('nav-' + name);
+  if (nl) nl.classList.add('active');
+  window.scrollTo(0, 0);
+  closeCart();
+  
+  // TASK 3: Hide cart FAB during checkout
+  if (name === 'order') {
+    document.getElementById('cartFab').style.display = 'none';
+  } else {
+    const c = cartCount();
+    document.getElementById('cartFab').classList.toggle('show', c > 0);
+    document.getElementById('cartFab').style.display = '';
+  }
+  
+  if (name === 'menu') renderMenuPage();
+  if (name === 'order') { renderOrderSummary(); checkCartEmpty(); }
+  if (name === 'home') renderPopular();
+}
+function checkCartEmpty() {
+  const m = document.getElementById('cartEmptyMsg');
+  if (m) m.style.display = cart.length === 0 ? 'block' : 'none';
+}
+
+/* ── CART DRAWER (unchanged) ── */
+function openCart() {
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+}
+function closeCart() {
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+}
+function goCheckout() { closeCart(); showPage('order'); }
+
+/* ── PLACE ORDER (unchanged) ── */
+async function placeOrder() {
+  const name    = document.getElementById('custName').value.trim();
+  const phone   = document.getElementById('custPhone').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  if (!name)    { alert('Please enter your name'); return; }
+  if (!/^[0-9]{10}$/.test(phone)) { alert('Please enter a valid 10-digit phone number'); return; }
+  if (!address) { alert('Please enter your delivery address'); return; }
+  if (!cart.length) { alert('Your cart is empty! Please add items first.'); return; }
+
+  const payload = {
+    customer: { name, phone, address },
+    items: cart.map(i => ({ id: i.id, name: i.name, price: i.price, quantity: i.qty })),
+    totalAmount: cartTotal()
+  };
+  try {
+    const res  = await fetch(API + '/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    const data = await res.json();
+    if (data.success) { onOrderSuccess(data.orderNumber); } else throw new Error(data.error);
+  } catch {
+    const num = 'SGF' + Date.now().toString().slice(-6);
+    const offline = JSON.parse(localStorage.getItem('sgOfflineOrders') || '[]');
+    offline.push({ ...payload, orderNumber: num, status: 'pending', createdAt: new Date().toISOString() });
+    localStorage.setItem('sgOfflineOrders', JSON.stringify(offline));
+    onOrderSuccess(num + ' (saved locally)');
+  }
+}
+function onOrderSuccess(orderNum) {
+  cart = []; saveCart(); updateCartUI();
+  document.getElementById('orderFormWrap').style.display = 'none';
+  document.getElementById('successScreen').classList.add('show');
+  document.getElementById('orderNumDisplay').textContent = 'Order #' + orderNum;
+}
+
+/* ── toggleMobileMenu (name preserved, extended) ── */
+function toggleMobileMenu() {
+  const menu    = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileMenuOverlay');
+  const isOpen  = menu.classList.toggle('open');
+  overlay.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+/* ── FULL MENU MODAL (unchanged) ── */
+function openMenuModal() {
+  document.getElementById('fullMenuModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeMenuModal() {
+  document.getElementById('fullMenuModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+/* ── NAV SCROLL (unchanged) ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 8);
+});
+
+/* ── INIT (unchanged) ── */
+updateCartUI();
+renderPopular();
+
+/* ══════════════════════════════════════════════════════════════
+   NEW FEATURES — Delivery Fee · GPS · Instructions · Combos
+   All code below is ADDITIVE. No existing functions renamed.
+══════════════════════════════════════════════════════════════ */
+
+/* ─── SHOP LOCATION (fixed) ─── */
+const SHOP_LAT = 17.5420556;
+const SHOP_LON = 78.2292500;
+const MAX_DELIVERY_KM = 15;
+
+/* ─── USER LOCATION STATE ─── */
+let userLat = null;
+let userLon = null;
+let currentDeliveryFee = 0;
+let currentDeliveryDistance = null;
+
+/* ─── TASK 1: Haversine Distance ─── */
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Earth radius in KM
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c; // distance in KM
+}
+
+/* ─── TASK 1: Delivery Fee Logic ─── */
+function calculateDeliveryFee(distance) {
+  if (distance <= 3) return 0;
+  const extraKm = Math.ceil(distance - 3);
+  return 30 + (extraKm * 10);
+}
+
+/* ─── TASK 2: Get User Location (GPS) ─── */
+function getUserLocation() {
+  const btn = document.getElementById('getLocationBtn');
+  const status = document.getElementById('locationStatus');
+  if (!navigator.geolocation) {
+    status.textContent = '⚠ Geolocation is not supported by your browser';
+    status.className = 'location-status error';
+    return;
+  }
+  btn.classList.add('loading');
+  btn.innerHTML = '⏳ Detecting your location...';
+  status.textContent = 'Requesting GPS access...';
+  status.className = 'location-status loading';
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      userLat = position.coords.latitude;
+      userLon = position.coords.longitude;
+      btn.classList.remove('loading');
+      btn.innerHTML = '✅ Location Detected';
+      status.textContent = `📍 Lat: ${userLat.toFixed(4)}, Lon: ${userLon.toFixed(4)}`;
+      status.className = 'location-status success';
+      updateDeliveryFee();
+    },
+    (error) => {
+      btn.classList.remove('loading');
+      btn.innerHTML = '📍 Use My Location';
+      let msg = 'Location access denied. You can still order — delivery fee will be estimated.';
+      if (error.code === 2) msg = 'Position unavailable. Please try again.';
+      if (error.code === 3) msg = 'Location request timed out. Please try again.';
+      status.textContent = '⚠ ' + msg;
+      status.className = 'location-status error';
+    },
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
+  );
+}
+
+/* ─── TASK 1: Update Delivery Fee in Summary ─── */
+function updateDeliveryFee() {
+  if (userLat === null || userLon === null) {
+    currentDeliveryFee = 0;
+    currentDeliveryDistance = null;
+    updateDeliveryDisplay();
+    return;
+  }
+  const dist = calculateDistance(SHOP_LAT, SHOP_LON, userLat, userLon);
+  currentDeliveryDistance = Math.round(dist * 10) / 10; // 1 decimal
+
+  if (currentDeliveryDistance > MAX_DELIVERY_KM) {
+    currentDeliveryFee = 0;
+    const feeEl = document.getElementById('deliveryFeeDisplay');
+    const noteEl = document.getElementById('deliveryDistanceNote');
+    if (feeEl) { feeEl.textContent = 'Outside area'; feeEl.className = 'fee-paid'; }
+    if (noteEl) noteEl.textContent = `📍 ${currentDeliveryDistance} KM away — outside delivery range (max ${MAX_DELIVERY_KM} KM). Please call us.`;
+    updateOrderTotal();
+    return;
+  }
+
+  currentDeliveryFee = calculateDeliveryFee(currentDeliveryDistance);
+  updateDeliveryDisplay();
+}
+
+function updateDeliveryDisplay() {
+  const feeEl = document.getElementById('deliveryFeeDisplay');
+  const noteEl = document.getElementById('deliveryDistanceNote');
+  const bannerEl = document.getElementById('deliveryInfoBanner');
+
+  if (feeEl) {
+    if (currentDeliveryFee === 0) {
+      feeEl.textContent = '₹0 (Free)';
+      feeEl.className = 'fee-free';
+    } else {
+      feeEl.textContent = '₹' + currentDeliveryFee;
+      feeEl.className = 'fee-paid';
+    }
+  }
+  if (noteEl) {
+    if (currentDeliveryDistance !== null) {
+      noteEl.textContent = `📍 ${currentDeliveryDistance} KM from shop` +
+        (currentDeliveryFee > 0 ? ` · ₹30 base + ₹${currentDeliveryFee - 30} extra` : ' · Free delivery!');
+    } else {
+      noteEl.textContent = '';
+    }
+  }
+  if (bannerEl) {
+    if (currentDeliveryDistance !== null && currentDeliveryFee === 0) {
+      bannerEl.innerHTML = '💚 Free delivery — you are within 3 KM!';
+    } else if (currentDeliveryDistance !== null) {
+      bannerEl.innerHTML = '🚴 Delivery fee applied based on distance';
+    } else {
+      bannerEl.innerHTML = '💚 Free delivery within 3 KM · Use location for exact fee';
+    }
+  }
+  updateOrderTotal();
+}
+
+function updateOrderTotal() {
+  const subtotal = cartTotal();
+  const subEl = document.getElementById('orderSubtotal');
+  const totEl = document.getElementById('orderTotal');
+  if (subEl) subEl.textContent = '₹' + subtotal;
+  if (totEl) totEl.textContent = '₹' + (subtotal + currentDeliveryFee);
+}
+
+/* ─── Patch renderOrderSummary to update fee display ─── */
+const _origRenderOrderSummary = renderOrderSummary;
+renderOrderSummary = function() {
+  _origRenderOrderSummary();
+  updateDeliveryFee();
+};
+
+/* ─── TASK 3: Extend placeOrder to include new fields ─── */
+const _origPlaceOrder = placeOrder;
+placeOrder = async function() {
+  // Build the customer/order data BEFORE calling original
+  const name    = document.getElementById('custName').value.trim();
+  const phone   = document.getElementById('custPhone').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  const instructions = document.getElementById('custInstructions').value.trim();
+
+  if (!name)    { alert('Please enter your name'); return; }
+  if (!/^[0-9]{10}$/.test(phone)) { alert('Please enter a valid 10-digit phone number'); return; }
+  if (!address) { alert('Please enter your delivery address'); return; }
+  if (!cart.length) { alert('Your cart is empty! Please add items first.'); return; }
+
+  // Check delivery range
+  if (currentDeliveryDistance !== null && currentDeliveryDistance > MAX_DELIVERY_KM) {
+    alert(`Sorry, we currently deliver within ${MAX_DELIVERY_KM} KM only. Your distance: ${currentDeliveryDistance} KM. Please call us at 8688332105.`);
+    return;
+  }
+
+  const payload = {
+    customer: {
+      name, phone, address,
+      instructions: instructions || '',
+      latitude: userLat,
+      longitude: userLon
+    },
+    items: cart.map(i => {
+      const entry = { id: i.id, name: i.name, price: i.price, quantity: i.qty };
+      if (i.comboItems) entry.comboItems = i.comboItems;
+      return entry;
+    }),
+    totalAmount: cartTotal() + currentDeliveryFee,
+    deliveryFee: currentDeliveryFee,
+    deliveryDistance: currentDeliveryDistance
+  };
+
+  try {
+    const res  = await fetch(API + '/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    const data = await res.json();
+    if (data.success) { onOrderSuccess(data.orderNumber); } else throw new Error(data.error);
+  } catch {
+    const num = 'SGF' + Date.now().toString().slice(-6);
+    const offline = JSON.parse(localStorage.getItem('sgOfflineOrders') || '[]');
+    offline.push({ ...payload, orderNumber: num, status: 'pending', createdAt: new Date().toISOString() });
+    localStorage.setItem('sgOfflineOrders', JSON.stringify(offline));
+    onOrderSuccess(num + ' (saved locally)');
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   TASK 4 & 5: Rice Combo Selection
+═══════════════════════════════════════════════════════════ */
+
+let comboState = {
+  comboId: null,       // rc1, rc2, rc3, rc4
+  pickCount: 2,        // how many to pick
+  selected: [],        // selected rice item ids
+  comboItem: null      // the MENU entry for the combo
+};
+
+const RICE_ITEMS = MENU['Rice Item']; // reference to the rice items array
+
+// Determine pick count from combo id
+function getComboPickCount(comboId) {
+  if (comboId === 'rc1' || comboId === 'rc3') return 2;
+  if (comboId === 'rc2' || comboId === 'rc4') return 3;
+  return 2;
+}
+
+function openComboModal(comboId) {
+  const comboItem = MENU['Rice Combo'].find(i => i.id === comboId);
+  if (!comboItem) return;
+  const pickCount = getComboPickCount(comboId);
+
+  comboState = { comboId, pickCount, selected: [], comboItem };
+
+  document.getElementById('comboModalTitle').textContent = comboItem.name;
+  document.getElementById('comboModalSubtitle').textContent = `Select any ${pickCount} rice items · ₹${comboItem.price}`;
+  document.getElementById('comboCounter').textContent = `Selected: 0 / ${pickCount}`;
+  document.getElementById('comboAddBtn').disabled = true;
+
+  const grid = document.getElementById('comboOptionsGrid');
+  grid.innerHTML = RICE_ITEMS.map(ri => `
+    <div class="combo-option" id="combo-opt-${ri.id}" onclick="toggleComboItem('${ri.id}')">
+      <div class="combo-option-name">${ri.name}</div>
+      <div class="combo-option-check">✓ Selected</div>
+    </div>
+  `).join('');
+
+  document.getElementById('comboModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeComboModal() {
+  document.getElementById('comboModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function toggleComboItem(riceId) {
+  const idx = comboState.selected.indexOf(riceId);
+  if (idx > -1) {
+    comboState.selected.splice(idx, 1);
+  } else {
+    if (comboState.selected.length >= comboState.pickCount) return; // max reached
+    comboState.selected.push(riceId);
+  }
+
+  // Update UI
+  RICE_ITEMS.forEach(ri => {
+    const el = document.getElementById('combo-opt-' + ri.id);
+    if (el) el.classList.toggle('selected', comboState.selected.includes(ri.id));
+  });
+
+  const count = comboState.selected.length;
+  document.getElementById('comboCounter').textContent = `Selected: ${count} / ${comboState.pickCount}`;
+  document.getElementById('comboAddBtn').disabled = (count !== comboState.pickCount);
+}
+
+function addComboToCart() {
+  if (comboState.selected.length !== comboState.pickCount) return;
+
+  const comboItems = comboState.selected.map(rid => {
+    const ri = RICE_ITEMS.find(r => r.id === rid);
+    return { id: ri.id, name: ri.name };
+  });
+
+  // Generate a unique cart ID for this combo instance
+  const cartId = comboState.comboId + '_' + comboState.selected.sort().join('_');
+
+  const existing = cart.find(i => i.id === cartId);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({
+      id: cartId,
+      name: comboState.comboItem.name + ' (' + comboItems.map(c => c.name).join(', ') + ')',
+      price: comboState.comboItem.price,
+      img: comboState.comboItem.img,
+      desc: comboState.comboItem.desc,
+      qty: 1,
+      isCombo: true,
+      comboItems: comboItems,
+      comboBaseId: comboState.comboId
+    });
+  }
+
+  saveCart();
+  updateCartUI();
+  closeComboModal();
+}
+
+/* ─── Patch foodCard for Rice Combo items ─── */
+const _origFoodCard = foodCard;
+foodCard = function(item) {
+  // For Rice Combo items, override the + button to open modal
+  if (MENU['Rice Combo'] && MENU['Rice Combo'].some(rc => rc.id === item.id)) {
+    // Count how many combos of this type are in cart
+    const comboQty = cart.filter(c => c.comboBaseId === item.id).reduce((s, c) => s + c.qty, 0);
+    const ctrl = comboQty === 0
+      ? `<button class="add-btn" onclick="openComboModal('${item.id}')">+</button>`
+      : `<div class="qty-ctrl"><span class="qty-num">${comboQty}</span><button class="qty-btn" onclick="openComboModal('${item.id}')" style="font-size:0.9rem;">+ More</button></div>`;
+    return `
+      <div class="food-card">
+        <div class="food-card-img">
+          <img src="${item.img}" alt="${item.name}" loading="lazy">
+          <div class="veg-badge-card"><span class="veg-dot"></span> Veg</div>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">${item.name}</div>
+          <div class="food-card-desc">${item.desc}</div>
+          <div class="food-card-footer">
+            <div class="food-price">₹${item.price}</div>
+            <div data-ctrl="${item.id}">${ctrl}</div>
+          </div>
+        </div>
+      </div>`;
+  }
+  return _origFoodCard(item);
+};
+
+/* ─── Patch renderCartBody to show combo sub-items ─── */
+const _origRenderCartBody = renderCartBody;
+renderCartBody = function() {
+  const body = document.getElementById('cartBody');
+  document.getElementById('cartTotalDisplay').textContent = '₹' + cartTotal();
+  if (!cart.length) {
+    body.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Your cart is empty</p><p style="margin-top:6px;font-size:0.8rem;">Add items from the menu</p></div>`;
+    return;
+  }
+  body.innerHTML = cart.map(i => {
+    // Combo: show short title + bullet list of sub-items
+    const comboHtml = i.isCombo && i.comboItems
+      ? `<ul class="cart-combo-items">${i.comboItems.map(c => `<li>${c.name}</li>`).join('')}</ul>`
+      : '';
+    // Use short combo base name, not the long concatenated one
+    const displayName = i.isCombo
+      ? `🍚 Rice Combo (${i.comboItems.length} Items)`
+      : i.name;
+    return `
+    <div class="cart-item">
+      <img class="cart-item-img" src="${i.img}" alt="${i.name}" loading="lazy">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${displayName}</div>
+        <div class="cart-item-price">₹${i.price} × ${i.qty} = ₹${i.price * i.qty}</div>
+        ${comboHtml}
+      </div>
+      <div class="qty-ctrl">
+        <button class="qty-btn" onclick="removeFromCart('${i.id}')">−</button>
+        <span class="qty-num">${i.qty}</span>
+        <button class="qty-btn" onclick="${i.isCombo ? "openComboModal('" + (i.comboBaseId || i.id) + "')" : "addToCart('" + i.id + "')"}">+</button>
+      </div>
+    </div>`;
+  }).join('');
+};
+
+/* ─── Patch renderOrderSummary to show combo sub-items ─── */
+const _origRenderOrderSummary2 = _origRenderOrderSummary;
+// Already patched above, let's update the base to include combo rendering
+const _baseRenderOrderSummary = _origRenderOrderSummary2;
+_origRenderOrderSummary = undefined; // clear
+renderOrderSummary = function() {
+  const el  = document.getElementById('orderSummaryItems');
+  const tot = document.getElementById('orderTotal');
+  if (!el) return;
+
+  if (!cart.length) {
+    el.innerHTML = '<div class="checkout-summary-empty">No items yet.<br>Add items from the menu first.</div>';
+    if (tot) tot.textContent = '₹0';
+    updateDeliveryFee();
+    return;
+  }
+
+  el.innerHTML = cart.map(i => {
+    const comboHtml = i.isCombo && i.comboItems
+      ? `<ul class="checkout-combo-items">${i.comboItems.map(c => `<li>${c.name}</li>`).join('')}</ul>`
+      : '';
+    // Use short combo title, not long concatenated name
+    const displayName = i.isCombo
+      ? `🍚 Rice Combo (${i.comboItems.length} Items)`
+      : i.name;
+    return `
+    <div class="checkout-item-card">
+      <img class="checkout-item-img" src="${i.img}" alt="${i.name}" loading="lazy"
+           onerror="this.style.display='none'">
+      <div class="checkout-item-meta">
+        <div class="checkout-item-name" title="${i.name}">${displayName}</div>
+        <div class="checkout-item-unit-price">₹${i.price} each</div>
+        ${comboHtml}
+      </div>
+      <div class="checkout-qty-ctrl">
+        <button class="checkout-qty-btn" onclick="removeFromCart('${i.id}')">−</button>
+        <span class="checkout-qty-num">${i.qty}</span>
+        <button class="checkout-qty-btn" onclick="${i.isCombo ? "openComboModal('" + (i.comboBaseId || i.id) + "')" : "addToCart('" + i.id + "')"}">+</button>
+      </div>
+      <div class="checkout-item-total">₹${i.price * i.qty}</div>
+    </div>`;
+  }).join('');
+
+  updateDeliveryFee();
+};
+
+/* ═══════════════════════════════════════════════════════════
+   FIX: Address-based Geocoding for Delivery Fee
+   Uses Nominatim (OpenStreetMap) to geocode typed address
+═══════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════
+   ENHANCED: Real-time Address Geocoding & Delivery Fee
+═══════════════════════════════════════════════════════════ */
+let _addressGeoTimeout = null;
+
+function initAddressGeocoding() {
+  const addrField = document.getElementById('custAddress');
+  const status = document.getElementById('locationStatus');
+  
+  if (!addrField) return;
+
+  // Listen for real-time typing
+  addrField.addEventListener('input', function() {
+    clearTimeout(_addressGeoTimeout);
+    const val = this.value.trim();
+    
+    // If input is cleared or too short, reset fee (unless GPS is active)
+    if (val.length < 10) {
+        if (userLat === null) {
+            status.textContent = ''; 
+            currentDeliveryFee = 0;
+            currentDeliveryDistance = null;
+            updateDeliveryDisplay(); // Instantly resets total
+        }
+        return;
+    }
+    
+    // Instantly update UI to indicate real-time calculation
+    if (status) {
+        status.textContent = '📍 Calculating distance & delivery fee...';
+        status.className = 'location-status loading';
+    }
+    
+    // Debounce to prevent spamming the geocoding API while typing
+    _addressGeoTimeout = setTimeout(() => geocodeAddress(val), 1000);
+  });
+
+  // Fallback for when the user clicks away
+  addrField.addEventListener('blur', function() {
+    clearTimeout(_addressGeoTimeout);
+    const val = this.value.trim();
+    if (val.length >= 10 && userLat === null) {
+      geocodeAddress(val);
+    }
+  });
+}
+
+async function geocodeAddress(address) {
+  // Only geocode if user hasn't already used GPS
+  // (GPS is more accurate, don't override it)
+  const status = document.getElementById('locationStatus');
+  const btn = document.getElementById('getLocationBtn');
+
+  // Append "Hyderabad" to improve geocoding accuracy for local addresses
+  const query = address.toLowerCase().includes('hyderabad')
+    ? address
+    : address + ', Hyderabad, Telangana, India';
+
+  try {
+    if (status) {
+      status.textContent = '📍 Estimating location from address...';
+      status.className = 'location-status loading';
+    }
+
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`;
+    const res = await fetch(url, {
+      headers: { 'Accept': 'application/json' }
+    });
+    const data = await res.json();
+
+    if (data && data.length > 0) {
+      userLat = parseFloat(data[0].lat);
+      userLon = parseFloat(data[0].lon);
+      if (btn) btn.innerHTML = '📍 Location Estimated from Address';
+      if (status) {
+        status.textContent = `📍 Found: ${data[0].display_name.substring(0, 60)}...`;
+        status.className = 'location-status success';
+      }
+      updateDeliveryFee();
+    } else {
+      if (status) {
+        status.textContent = '⚠ Could not find location. Use GPS or check address.';
+        status.className = 'location-status error';
+      }
+    }
+  } catch (err) {
+    if (status) {
+      status.textContent = '⚠ Address lookup failed. Use GPS button instead.';
+      status.className = 'location-status error';
+    }
+  }
+}
+
+// Initialize address geocoding when page loads
+initAddressGeocoding();
+
+</script>
+</body>
+</html>
