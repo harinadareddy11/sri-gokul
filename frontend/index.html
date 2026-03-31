@@ -1823,19 +1823,25 @@
       }
 
       .nav-inner {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 8px;
+        gap: 16px;
       }
 
+
       .nav-logo {
-        gap: 6px;
+        flex: 1;
+        justify-content: center;
+        margin-right: 0;
       }
 
       .nav-logo-img {
-        width: 70px;
-        height: 60px;
+        width: 60px;
+        height: 50px;
+        overflow: visible;
+      }
+
+      .nav-logo-img img {
+        object-fit: contain;
+        transform: none;
       }
 
       .nav-logo-text {
@@ -1848,7 +1854,6 @@
 
       .hamburger {
         margin-left: 0;
-        margin-right: 0;
         flex-shrink: 0;
       }
     }
