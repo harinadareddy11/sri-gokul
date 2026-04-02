@@ -2289,16 +2289,14 @@ async function createDineInOrder() {
   try {
     const ref = await fbDb.ref('orders').push(order);
     order._id = ref.key;
-    allOrders.unshift(order);
+    // DO NOT manually push to allOrders — the Firebase real-time listener
+    // fires immediately on push and rebuilds allOrders from the snapshot.
+    // Manually calling allOrders.unshift() AFTER the listener fires causes duplicates.
     closeNewOrderModal();
     showToast('Dine-In order created!', 'success');
-    updateMiniStats();
-    // Refresh analytics if tab is open
-    const statsTab = document.getElementById('tab-stats');
-    if (statsTab && statsTab.classList.contains('active')) buildAnalytics();
-    // Auto-print
+    // Auto-print using currentModalOrder directly (don't search allOrders which may not be synced yet)
     currentModalOrder = order;
-    printInvoice(ref.key);
+    printInvoice(); // uses currentModalOrder, avoids allOrders race condition
   } catch (err) {
     showToast('Could not save order: ' + err.message, 'error');
     btn.disabled = false;
