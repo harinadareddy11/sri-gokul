@@ -923,6 +923,7 @@ a { text-decoration: none; color: inherit; }
                 <option value="pending">⏳ Pending</option>
                 <option value="preparing">👨‍🍳 Preparing</option>
                 <option value="completed">✅ Completed</option>
+                <option value="printed">🖨️ Printed</option>
               </select>
               <select class="filter-select" id="sortFilter" onchange="applyFilters()">
                 <option value="newest">Newest First</option>
@@ -970,7 +971,7 @@ a { text-decoration: none; color: inherit; }
             <div class="stat-icon-wrap">💰</div>
             <div class="stat-num" id="st-revenue">—</div>
             <div class="stat-label">Total Revenue</div>
-            <div class="stat-sub">All completed orders</div>
+            <div class="stat-sub">Completed &amp; Printed</div>
           </div>
           <div class="stat-card green">
             <div class="stat-icon-wrap">📈</div>
@@ -988,7 +989,7 @@ a { text-decoration: none; color: inherit; }
             <div class="stat-icon-wrap">🔄</div>
             <div class="stat-num" id="st-rate">—</div>
             <div class="stat-label">Completion Rate</div>
-            <div class="stat-sub">Orders fulfilled</div>
+            <div class="stat-sub">Orders Fulfilled</div>
           </div>
         </div>
 
@@ -1356,6 +1357,9 @@ function loadOrders() {
     allOrders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     updateMiniStats();
     applyFilters();
+    // Refresh analytics dashboard automatically if tab is active
+    const statsTab = document.getElementById('tab-stats');
+    if (statsTab && statsTab.classList.contains('active')) buildAnalytics();
   }, err => {
     console.error('Firebase read error:', err);
     // Fallback to local
@@ -1380,7 +1384,8 @@ function updateMiniStats() {
   document.getElementById('ms-total').textContent = allOrders.length;
   document.getElementById('ms-pending').textContent = pending;
   document.getElementById('ms-preparing').textContent = allOrders.filter(o => o.status === 'preparing').length;
-  document.getElementById('ms-completed').textContent = allOrders.filter(o => o.status === 'completed').length;
+  // Count 'completed' AND legacy 'printed' orders as fulfilled
+  document.getElementById('ms-completed').textContent = allOrders.filter(o => o.status === 'completed' || o.status === 'printed').length;
   document.getElementById('pendingBadge').textContent = pending;
   document.getElementById('pendingBadge').style.display = pending > 0 ? 'flex' : 'none';
 }
@@ -1664,15 +1669,17 @@ async function deleteOrder(id, type) {
 //  ANALYTICS
 // ══════════════════════════════════
 function buildAnalytics() {
-  const completed = allOrders.filter(o => o.status === 'completed');
-  const revenue = completed.reduce((s, o) => s + o.totalAmount, 0);
+  // Count both 'completed' AND legacy 'printed' orders as fulfilled
+  const isFulfilled = o => o.status === 'completed' || o.status === 'printed';
+  const completed = allOrders.filter(isFulfilled);
+  const revenue = completed.reduce((s, o) => s + Number(o.totalAmount || 0), 0);
   const avgVal = completed.length ? Math.round(revenue / completed.length) : 0;
   const rate = allOrders.length ? Math.round((completed.length / allOrders.length) * 100) : 0;
 
   // Today
   const today = new Date().toDateString();
-  const todayOrders = allOrders.filter(o => new Date(o.createdAt).toDateString() === today);
-  const todayRev = todayOrders.filter(o => o.status === 'completed').reduce((s,o) => s + o.totalAmount, 0);
+  const todayOrders = allOrders.filter(o => o.createdAt && new Date(o.createdAt).toDateString() === today);
+  const todayRev = todayOrders.filter(isFulfilled).reduce((s, o) => s + Number(o.totalAmount || 0), 0);
 
   document.getElementById('st-revenue').textContent = '₹' + revenue.toLocaleString('en-IN');
   document.getElementById('st-today').textContent = todayOrders.length;
@@ -1943,10 +1950,11 @@ function renderInvoicesTable() {
   let rows = allOrders.filter(o => {
     const type   = o.orderType || 'online';
     const status = o.status || 'pending';
+    const isPr   = o.isPrinted || o.status === 'printed'; // backwards compat
     if (invFilter === 'online')  return type   === 'online';
     if (invFilter === 'dinein')  return type   === 'dinein';
-    if (invFilter === 'pending') return status !== 'printed';
-    if (invFilter === 'printed') return status === 'printed';
+    if (invFilter === 'pending') return !isPr;
+    if (invFilter === 'printed') return isPr;
     return true;
   });
 
@@ -2084,20 +2092,29 @@ function printInvoice(orderId) {
     </div>`;
 
   window.print();
-
-  // Update status to 'printed' in Firebase
+  
+  // Update status to 'completed' + mark isPrinted in Firebase
   if (o._id) {
-    fbDb.ref('orders/' + o._id).update({ status: 'printed' })
-      .then(() => {
-        showToast('Invoice printed · status updated', 'success');
-        const local = allOrders.find(x => x._id === o._id);
-        if (local) local.status = 'printed';
-        updateMiniStats();
-        const invTab = document.getElementById('tab-invoices');
-        if (invTab && invTab.classList.contains('active')) buildInvoicesTab();
-        updateInvBadge();
-      })
-      .catch(() => showToast('Printed but could not update status', 'error'));
+    // Only update if not already completed to avoid double-counting
+    if (o.status !== 'completed') {
+      fbDb.ref('orders/' + o._id).update({ status: 'completed', isPrinted: true })
+        .then(() => {
+          showToast('Invoice printed · Order completed', 'success');
+          const local = allOrders.find(x => x._id === o._id);
+          if (local) { local.status = 'completed'; local.isPrinted = true; }
+          updateMiniStats();
+          buildAnalytics();
+          applyFilters();
+          const invTab = document.getElementById('tab-invoices');
+          if (invTab && invTab.classList.contains('active')) buildInvoicesTab();
+          updateInvBadge();
+        })
+        .catch(() => showToast('Printed but could not update status', 'error'));
+    } else {
+      // Already completed — just refresh UI
+      updateMiniStats();
+      buildAnalytics();
+    }
   }
   closeModal();
 }
@@ -2251,7 +2268,7 @@ async function createDineInOrder() {
     orderNumber:  tokenNum,
     tokenNumber:  tokenNum,
     orderType:    'dinein',
-    status:       'pending',
+    status:       'completed',  // dine-in is fulfilled immediately
     createdAt:    new Date().toISOString(),
     totalAmount:  total,
     deliveryFee:  0,
@@ -2276,6 +2293,9 @@ async function createDineInOrder() {
     closeNewOrderModal();
     showToast('Dine-In order created!', 'success');
     updateMiniStats();
+    // Refresh analytics if tab is open
+    const statsTab = document.getElementById('tab-stats');
+    if (statsTab && statsTab.classList.contains('active')) buildAnalytics();
     // Auto-print
     currentModalOrder = order;
     printInvoice(ref.key);
