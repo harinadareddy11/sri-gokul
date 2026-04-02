@@ -655,6 +655,132 @@ a { text-decoration: none; color: inherit; }
 .amount-delivery-sub {
   font-size: 0.68rem; color: var(--text-faint); margin-top: 2px;
 }
+
+/* ══════════════════════════════════════════
+   Invoice & Order Type System
+══════════════════════════════════════════ */
+.badge-online  { background: var(--blue-bg);  color: var(--blue);  border: 1px solid rgba(59,130,246,0.2); }
+.badge-online::before  { background: var(--blue); }
+.badge-dinein  { background: var(--green-bg); color: var(--green); border: 1px solid rgba(34,197,94,0.2); }
+.badge-dinein::before  { background: var(--green); }
+.badge-printed { background: rgba(168,85,247,0.1); color: #a855f7; border: 1px solid rgba(168,85,247,0.2); }
+.badge-printed::before { background: #a855f7; }
+
+.inv-filters {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 14px 20px; border-bottom: 1px solid var(--border);
+}
+.inv-filter-chip {
+  padding: 5px 14px; border-radius: 20px; font-size: 0.76rem; font-weight: 600;
+  border: 1.5px solid var(--border2); color: var(--text-dim); cursor: pointer;
+  transition: all 0.18s;
+}
+.inv-filter-chip:hover { background: var(--surface2); color: var(--text); }
+.inv-filter-chip.active        { background: var(--gold-glow); color: var(--gold); border-color: rgba(200,151,58,0.35); }
+.inv-filter-chip.active-online { background: var(--blue-bg); color: var(--blue); border-color: rgba(59,130,246,0.3); }
+.inv-filter-chip.active-dinein { background: var(--green-bg); color: var(--green); border-color: rgba(34,197,94,0.3); }
+.inv-filter-chip.active-pending{ background: var(--amber-bg); color: var(--amber); border-color: rgba(245,158,11,0.3); }
+.inv-filter-chip.active-printed{ background: rgba(168,85,247,0.1); color: #a855f7; border-color: rgba(168,85,247,0.3); }
+
+.act-print { border-color: rgba(168,85,247,0.25); color: #a855f7; }
+.act-print:hover { background: rgba(168,85,247,0.1); }
+
+/* Dine-In Modal */
+.dinein-modal-backdrop {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.75); z-index: 9500;
+  align-items: flex-start; justify-content: center;
+  backdrop-filter: blur(4px); overflow-y: auto; padding: 20px 16px;
+}
+.dinein-modal-backdrop.open { display: flex; }
+.dinein-modal-box {
+  background: var(--surface); border: 1px solid var(--border2);
+  border-radius: var(--radius-lg); width: 700px; max-width: 96vw;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  animation: fadeSlideUp 0.3s ease;
+  display: flex; flex-direction: column;
+  margin: auto;
+}
+.dinein-modal-header {
+  padding: 18px 22px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+.dinein-modal-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+.dinein-modal-body { display: flex; gap: 0; flex: 1; min-height: 0; }
+.dinein-menu-col {
+  flex: 1; padding: 16px; border-right: 1px solid var(--border);
+  overflow-y: auto; max-height: 70vh;
+}
+.dinein-cart-col {
+  width: 260px; flex-shrink: 0; padding: 16px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.dinein-section-label {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--text-faint);
+  margin: 12px 0 6px;
+}
+.dinein-section-label:first-child { margin-top: 0; }
+.dinein-item-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 10px; border-radius: 8px;
+  font-size: 0.82rem; color: var(--text);
+  transition: background 0.15s; gap: 8px;
+}
+.dinein-item-row:hover { background: var(--surface2); }
+.dinein-item-name { flex: 1; font-weight: 500; }
+.dinein-item-price { color: var(--text-faint); font-size: 0.76rem; min-width: 36px; text-align: right; }
+.dinein-qty-ctrl { display: flex; align-items: center; gap: 6px; }
+.dinein-qty-btn {
+  width: 24px; height: 24px; border-radius: 6px;
+  background: var(--surface3); color: var(--text); font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; transition: background 0.15s; flex-shrink: 0;
+}
+.dinein-qty-btn:hover { background: var(--gold); color: #111; }
+.dinein-qty-num { font-size: 0.82rem; font-weight: 700; min-width: 16px; text-align: center; color: var(--gold); }
+.dinein-cart-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-faint); margin-bottom: 8px; }
+.dinein-cart-body { flex: 1; overflow-y: auto; }
+.dinein-cart-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  font-size: 0.8rem; color: var(--text-dim); gap: 8px;
+}
+.dinein-cart-item:last-child { border-bottom: none; }
+.dinein-cart-item-name { flex: 1; }
+.dinein-cart-item-total { font-weight: 700; color: var(--text); white-space: nowrap; }
+.dinein-cart-empty { text-align: center; color: var(--text-faint); font-size: 0.82rem; padding: 24px 0; }
+.dinein-separator { border: none; border-top: 1px solid var(--border); margin: 10px 0; }
+.dinein-total-row { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; }
+.dinein-total-label { color: var(--text-dim); }
+.dinein-total-amount { color: var(--gold); }
+.dinein-customer-input {
+  width: 100%; padding: 9px 12px; background: var(--surface2);
+  border: 1.5px solid var(--border2); border-radius: 8px;
+  font-size: 0.82rem; color: var(--text); transition: border-color 0.2s;
+}
+.dinein-customer-input:focus { outline: none; border-color: var(--gold); }
+.dinein-customer-input::placeholder { color: var(--text-faint); }
+.dinein-create-btn {
+  width: 100%; padding: 11px; border-radius: 9px;
+  background: var(--gold); color: #111; font-weight: 700; font-size: 0.85rem;
+  transition: all 0.18s; box-shadow: 0 4px 16px rgba(200,151,58,0.3);
+}
+.dinein-create-btn:hover { background: #d4a543; transform: translateY(-1px); }
+.dinein-create-btn:disabled { opacity: 0.45; pointer-events: none; }
+
+/* Thermal print */
+@page { size: auto; margin: 0mm; }
+@media print {
+  body * { visibility: hidden !important; }
+  .print-invoice, .print-invoice * { visibility: visible !important; }
+  .print-invoice {
+    display: block !important; position: fixed !important;
+    inset: 0 !important; background: white !important;
+    color: black !important; padding: 16px !important;
+    font-family: 'Courier New', monospace !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -706,6 +832,11 @@ a { text-decoration: none; color: inherit; }
         <span class="nav-icon">📋</span>
         <span>Orders</span>
         <span class="nav-badge" id="pendingBadge">0</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('invoices')">
+        <span class="nav-icon">🧾</span>
+        <span>Invoices</span>
+        <span class="nav-badge" id="pendingInvBadge" style="display:none;">0</span>
       </div>
       <div class="nav-item" onclick="switchTab('stats')">
         <span class="nav-icon">📊</span>
@@ -885,6 +1016,71 @@ a { text-decoration: none; color: inherit; }
         </div>
       </div>
 
+      <!-- ════ INVOICES TAB ════ -->
+      <div class="tab-content" id="tab-invoices">
+        <!-- Mini stats for invoices -->
+        <div class="stats-row" style="margin-bottom:18px;">
+          <div class="stat-card gold">
+            <div class="stat-icon-wrap">📦</div>
+            <div class="stat-num" id="inv-total">—</div>
+            <div class="stat-label">All Invoices</div>
+          </div>
+          <div class="stat-card blue">
+            <div class="stat-icon-wrap">🌐</div>
+            <div class="stat-num" id="inv-online">—</div>
+            <div class="stat-label">Online Orders</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-icon-wrap">🍽️</div>
+            <div class="stat-num" id="inv-dinein">—</div>
+            <div class="stat-label">Dine-In Orders</div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-icon-wrap">⏳</div>
+            <div class="stat-num" id="inv-pending">—</div>
+            <div class="stat-label">Pending Print</div>
+          </div>
+        </div>
+
+        <!-- Invoices table card -->
+        <div class="table-card">
+          <!-- Filter chips -->
+          <div class="inv-filters" id="invFilters">
+            <span style="font-size:0.72rem;font-weight:700;color:var(--text-faint);letter-spacing:1px;text-transform:uppercase;margin-right:4px;">Filter:</span>
+            <button class="inv-filter-chip active" id="ifc-all"      onclick="setInvFilter('all')">All</button>
+            <button class="inv-filter-chip" id="ifc-online"   onclick="setInvFilter('online')">🌐 Online</button>
+            <button class="inv-filter-chip" id="ifc-dinein"   onclick="setInvFilter('dinein')">🍽️ Dine-In</button>
+            <button class="inv-filter-chip" id="ifc-pending"  onclick="setInvFilter('pending')">⏳ Pending</button>
+            <button class="inv-filter-chip" id="ifc-printed"  onclick="setInvFilter('printed')">🖨️ Printed</button>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table class="orders-table">
+              <thead>
+                <tr>
+                  <th>Order #</th>
+                  <th>Type</th>
+                  <th>Customer</th>
+                  <th>Items</th>
+                  <th>Amount</th>
+                  <th>Invoice Status</th>
+                  <th>Time</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="invoicesBody">
+                <tr><td colspan="8"><div class="loader"><div class="spinner"></div></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pagination" id="invPagination" style="display:none;">
+            <span id="invPaginationInfo"></span>
+            <div class="page-controls" id="invPageControls"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- ════ SETTINGS TAB ════ -->
       <div class="tab-content" id="tab-settings">
         <div class="settings-section">
@@ -972,6 +1168,47 @@ a { text-decoration: none; color: inherit; }
 
 <!-- Print Invoice (hidden, shows on print) -->
 <div class="print-invoice" id="printInvoice"></div>
+
+<!-- ════════════ DINE-IN ORDER MODAL ════════════ -->
+<div class="dinein-modal-backdrop" id="dineInModal">
+  <div class="dinein-modal-box">
+    <div class="dinein-modal-header">
+      <div class="dinein-modal-title">🍽️ New Dine-In Order</div>
+      <button class="modal-close" onclick="closeNewOrderModal()">✕</button>
+    </div>
+    <div class="dinein-modal-body">
+      <!-- Left: menu picker -->
+      <div class="dinein-menu-col" id="dineInMenuCol">
+        <div style="font-size:0.78rem;color:var(--text-faint);margin-bottom:12px;">Select items from the menu:</div>
+        <!-- rendered by JS -->
+      </div>
+      <!-- Right: order summary + customer + action -->
+      <div class="dinein-cart-col">
+        <div class="dinein-cart-title">Order Summary</div>
+        <div class="dinein-cart-body" id="dineInCartBody">
+          <div class="dinein-cart-empty">No items yet.</div>
+        </div>
+        <hr class="dinein-separator">
+        <div class="dinein-total-row">
+          <span class="dinein-total-label">Total</span>
+          <span class="dinein-total-amount" id="dineInTotal">₹0</span>
+        </div>
+        <hr class="dinein-separator">
+        <div>
+          <label style="font-size:0.72rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--text-faint);display:block;margin-bottom:6px;">Customer Name (optional)</label>
+          <input class="dinein-customer-input" id="dineInCustName" placeholder="Walk-in customer" autocomplete="off">
+        </div>
+        <div>
+          <label style="font-size:0.72rem;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--text-faint);display:block;margin-bottom:6px;">Table / Note (optional)</label>
+          <input class="dinein-customer-input" id="dineInTableNote" placeholder="e.g. Table 3, Parcel" autocomplete="off">
+        </div>
+        <button class="dinein-create-btn" id="dineInCreateBtn" onclick="createDineInOrder()" disabled>
+          🖨️ Create &amp; Print Invoice
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Firebase Client SDK (CDN — no backend needed) -->
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
@@ -1094,13 +1331,14 @@ function switchTab(tab) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
-  // highlight nav
-  const navMap = { orders: 0, stats: 1, settings: 2 };
+  // highlight nav — orders:0, invoices:1, stats:2, settings:3
+  const navMap = { orders: 0, invoices: 1, stats: 2, settings: 3 };
   document.querySelectorAll('.nav-item')[navMap[tab]]?.classList.add('active');
-  const titles = { orders: 'Orders', stats: 'Analytics', settings: 'Settings' };
+  const titles = { orders: 'Orders', invoices: 'Invoices', stats: 'Analytics', settings: 'Settings' };
   document.getElementById('topbarTitle').textContent = titles[tab];
   document.getElementById('topbarBreadcrumb').textContent = titles[tab];
   if (tab === 'stats') buildAnalytics();
+  if (tab === 'invoices') buildInvoicesTab();
 }
 
 // ══════════════════════════════════
@@ -1592,7 +1830,7 @@ function printInvoice() {
 //  NEW ORDER HELPER
 // ══════════════════════════════════
 function openNewOrderHelper() {
-  showToast('Please use the main website to place orders', 'info');
+  openNewOrderModal();
 }
 
 // ══════════════════════════════════
@@ -1645,6 +1883,408 @@ function showToast(msg, type = 'success') {
 //  INIT
 // ══════════════════════════════════
 init();
+
+// ══════════════════════════════════════════════════════════
+//  INVOICE TAB SYSTEM
+// ══════════════════════════════════════════════════════════
+
+function orderTypeBadge(type) {
+  if (type === 'dinein') return '<span class="badge badge-dinein">🍽️ Dine-In</span>';
+  return '<span class="badge badge-online">🌐 Online</span>';
+}
+
+function printStatusBadge(status) {
+  if (status === 'printed') return '<span class="badge badge-printed">🖨️ Printed</span>';
+  return '<span class="badge badge-pending">⏳ Pending</span>';
+}
+
+function updateInvBadge() {
+  const pending = allOrders.filter(o => o.status !== 'printed').length;
+  const el = document.getElementById('pendingInvBadge');
+  if (!el) return;
+  el.textContent = pending;
+  el.style.display = pending > 0 ? 'flex' : 'none';
+}
+
+let invFilter = 'all';
+let invCurrentPage = 1;
+const INV_PER_PAGE = 12;
+
+function setInvFilter(f) {
+  invFilter = f;
+  invCurrentPage = 1;
+  const chipMap = { all:'active', online:'active-online', dinein:'active-dinein', pending:'active-pending', printed:'active-printed' };
+  ['all','online','dinein','pending','printed'].forEach(k => {
+    const chip = document.getElementById('ifc-' + k);
+    if (!chip) return;
+    chip.className = 'inv-filter-chip' + (k === f ? ' ' + chipMap[k] : '');
+  });
+  renderInvoicesTable();
+}
+
+function buildInvoicesTab() {
+  const online  = allOrders.filter(o => (o.orderType || 'online') === 'online').length;
+  const dinein  = allOrders.filter(o => o.orderType === 'dinein').length;
+  const pending = allOrders.filter(o => o.status !== 'printed').length;
+  const el = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+  el('inv-total',   allOrders.length);
+  el('inv-online',  online);
+  el('inv-dinein',  dinein);
+  el('inv-pending', pending);
+  updateInvBadge();
+  renderInvoicesTable();
+}
+
+function renderInvoicesTable() {
+  const tbody = document.getElementById('invoicesBody');
+  const pag   = document.getElementById('invPagination');
+  if (!tbody) return;
+
+  let rows = allOrders.filter(o => {
+    const type   = o.orderType || 'online';
+    const status = o.status || 'pending';
+    if (invFilter === 'online')  return type   === 'online';
+    if (invFilter === 'dinein')  return type   === 'dinein';
+    if (invFilter === 'pending') return status !== 'printed';
+    if (invFilter === 'printed') return status === 'printed';
+    return true;
+  });
+
+  rows.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">🧾</div><div class="empty-title">No invoices found</div><div class="empty-sub">Try a different filter</div></div></td></tr>';
+    if (pag) pag.style.display = 'none';
+    return;
+  }
+
+  const start    = (invCurrentPage - 1) * INV_PER_PAGE;
+  const pageRows = rows.slice(start, start + INV_PER_PAGE);
+  const totalPgs = Math.ceil(rows.length / INV_PER_PAGE);
+
+  tbody.innerHTML = pageRows.map(o => {
+    const date      = new Date(o.createdAt);
+    const timeStr   = date.toLocaleString('en-IN', { day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit' });
+    const itemCount = o.items.reduce((s, i) => s + (i.quantity || 1), 0);
+    const itemNames = o.items.slice(0, 2).map(i => i.name).join(', ') + (o.items.length > 2 ? ` +${o.items.length - 2}` : '');
+    const custName  = (o.customer && o.customer.name) ? o.customer.name : 'Walk-in';
+    const total     = o.totalAmount || 0;
+    const type      = o.orderType || 'online';
+    const status    = o.status || 'pending';
+    const ordId     = o._id || o.orderNumber;
+    return `<tr>
+      <td><div class="order-num">${o.orderNumber || '—'}</div></td>
+      <td>${orderTypeBadge(type)}</td>
+      <td><div class="customer-cell"><span class="cust-name">${custName}</span>${o.customer && o.customer.phone ? `<span class="cust-phone">📞 ${o.customer.phone}</span>` : ''}</div></td>
+      <td><div class="items-cell">${itemNames} <span style="color:var(--text-faint)">(${itemCount})</span></div></td>
+      <td><span class="amount-cell">₹${total}</span></td>
+      <td>${printStatusBadge(status)}</td>
+      <td style="font-size:0.78rem;color:var(--text-dim);white-space:nowrap;">${timeStr}</td>
+      <td><div class="act-group">
+        <button class="act act-view" onclick='showOrderDetail(${JSON.stringify(o)})'>View</button>
+        <button class="act act-print" onclick="printInvoice('${ordId}')">🖨️ Print</button>
+      </div></td>
+    </tr>`;
+  }).join('');
+
+  if (totalPgs > 1 && pag) {
+    pag.style.display = 'flex';
+    document.getElementById('invPaginationInfo').textContent = `Showing ${start+1}–${Math.min(start+INV_PER_PAGE, rows.length)} of ${rows.length}`;
+    let pages = '';
+    for (let i = 1; i <= totalPgs; i++) pages += `<button class="page-btn ${i===invCurrentPage?'active':''}" onclick="invGoPage(${i})">${i}</button>`;
+    document.getElementById('invPageControls').innerHTML = pages;
+  } else if (pag) { pag.style.display = 'none'; }
+}
+
+function invGoPage(n) { invCurrentPage = n; renderInvoicesTable(); }
+
+// ══════════════════════════════════
+//  PRINT INVOICE (thermal format)
+// ══════════════════════════════════
+function printInvoice(orderId) {
+  let o = orderId ? allOrders.find(x => x._id === orderId || x.orderNumber === orderId) : currentModalOrder;
+  if (!o) { showToast('Order not found', 'error'); return; }
+
+  const orderType  = o.orderType || 'online';
+  const isOnline   = orderType === 'online';
+  const tokenNo    = o.tokenNumber || o.orderNumber || '—';
+  const custName   = (o.customer && o.customer.name) ? o.customer.name : 'Walk-in';
+  const custPhone  = (o.customer && o.customer.phone) ? o.customer.phone : '—';
+  const custAddr   = (o.customer && o.customer.address) ? o.customer.address : '—';
+  const instructions = (o.customer && o.customer.instructions) ? o.customer.instructions : '';
+
+  const items = o.items.map(i => {
+    const comboNote = (i.comboItems && i.comboItems.length)
+      ? `<br><span style="font-size:0.75rem;color:#888;">&nbsp;&nbsp;${i.comboItems.map(c => '• ' + c.name).join('<br>&nbsp;&nbsp;')}</span>` : '';
+    return `<tr style="border-bottom:1px dashed #ccc">
+      <td style="padding:5px 4px">${i.name}${comboNote}</td>
+      <td style="text-align:center;padding:5px 4px">${i.quantity||1}</td>
+      <td style="text-align:right;padding:5px 4px">₹${i.price*(i.quantity||1)}</td>
+    </tr>`;
+  }).join('');
+
+  const subtotal   = o.items.reduce((s, i) => s + i.price * (i.quantity || 1), 0);
+  const delFee     = (isOnline && o.deliveryFee) ? o.deliveryFee : 0;
+  const grandTotal = o.totalAmount || (subtotal + delFee);
+
+  const deliveryRows = isOnline && delFee > 0 ? `
+    <tr><td colspan="2" style="text-align:right;font-size:0.8rem;color:#555;padding:3px 4px">Subtotal</td><td style="text-align:right;padding:3px 4px">₹${subtotal}</td></tr>
+    <tr><td colspan="2" style="text-align:right;font-size:0.8rem;color:#555;padding:3px 4px">Delivery Fee</td><td style="text-align:right;padding:3px 4px">₹${delFee}</td></tr>` : '';
+
+  const instBlock  = instructions
+    ? `<div style="margin:10px 0;padding:8px;background:#fafafa;border-left:3px solid #c8973a;font-size:0.78rem;"><strong>Instructions:</strong> ${instructions}</div>` : '';
+  const distLine   = (isOnline && o.deliveryDistance != null)
+    ? `<p style="margin:2px 0;font-size:0.8rem;color:#555">Distance: ${o.deliveryDistance} KM</p>` : '';
+  const addrLine   = isOnline ? `<p style="margin:2px 0;font-size:0.8rem">📍 ${custAddr}</p>` : '';
+  const phoneLine  = isOnline ? `<p style="margin:2px 0;font-size:0.8rem">📞 ${custPhone}</p>` : '';
+
+  document.getElementById('printInvoice').innerHTML = `
+    <div style="max-width:380px;margin:0 auto;font-family:'Courier New',monospace;font-size:0.85rem;padding:20px 16px;">
+      <div style="text-align:center;border-bottom:2px solid #111;padding-bottom:14px;margin-bottom:14px;">
+        <div style="font-size:1.5rem;">🦚</div>
+        <h2 style="margin:4px 0 2px;font-size:1.2rem;letter-spacing:1px;">SRI GOKUL FOODS</h2>
+        <p style="margin:2px 0;font-size:0.76rem;color:#555;">Tiffin Center – Quthbullapur, Hyderabad</p>
+        <p style="margin:2px 0;font-size:0.76rem;color:#555;">📞 8688332105</p>
+      </div>
+      <div style="text-align:center;margin-bottom:12px;">
+        <p style="margin:0;font-size:1rem;font-weight:bold;">INVOICE</p>
+        <p style="margin:3px 0;font-size:0.82rem;background:${isOnline?'#e3f0ff':'#e6faf0'};border-radius:4px;padding:3px 8px;display:inline-block;">
+          Order Type: <strong>${isOnline ? 'Online Order' : 'Dine-In'}</strong>
+        </p>
+        <p style="margin:4px 0;font-size:0.9rem;font-weight:bold;">Token No: ${tokenNo}</p>
+      </div>
+      <div style="margin-bottom:12px;">
+        <p style="margin:2px 0;font-size:0.82rem;"><strong>${custName}</strong></p>
+        ${phoneLine}${addrLine}${distLine}
+        <p style="margin:2px 0;font-size:0.75rem;color:#777;">${new Date(o.createdAt).toLocaleString('en-IN')}</p>
+      </div>
+      ${instBlock}
+      <table style="width:100%;border-collapse:collapse;margin-bottom:10px;">
+        <thead>
+          <tr style="border-bottom:2px solid #111;">
+            <th style="text-align:left;padding:5px 4px;font-size:0.78rem;">Item</th>
+            <th style="text-align:center;padding:5px 4px;font-size:0.78rem;">Qty</th>
+            <th style="text-align:right;padding:5px 4px;font-size:0.78rem;">Amt</th>
+          </tr>
+        </thead>
+        <tbody>${items}</tbody>
+        <tfoot>
+          ${deliveryRows}
+          <tr style="border-top:2px solid #111;">
+            <td colspan="2" style="text-align:right;padding:6px 4px;font-weight:bold;">TOTAL</td>
+            <td style="text-align:right;padding:6px 4px;font-weight:bold;font-size:0.95rem;">₹${grandTotal}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <div style="text-align:center;margin-top:18px;border-top:2px solid #111;padding-top:12px;">
+        <p style="margin:4px 0;font-size:0.85rem;font-weight:bold;">Thank You! 🙏</p>
+        <p style="margin:2px 0;font-size:0.72rem;color:#777;">Visit us again · Sri Gokul Foods</p>
+        <p style="margin:2px 0;font-size:0.68rem;color:#aaa;">srigokul.online</p>
+      </div>
+    </div>`;
+
+  window.print();
+
+  // Update status to 'printed' in Firebase
+  if (o._id) {
+    fbDb.ref('orders/' + o._id).update({ status: 'printed' })
+      .then(() => {
+        showToast('Invoice printed · status updated', 'success');
+        const local = allOrders.find(x => x._id === o._id);
+        if (local) local.status = 'printed';
+        updateMiniStats();
+        const invTab = document.getElementById('tab-invoices');
+        if (invTab && invTab.classList.contains('active')) buildInvoicesTab();
+        updateInvBadge();
+      })
+      .catch(() => showToast('Printed but could not update status', 'error'));
+  }
+  closeModal();
+}
+
+// ══════════════════════════════════
+//  DINE-IN ORDER MODAL
+// ══════════════════════════════════
+const ADMIN_MENU = {
+  'Tiffin': [
+    {id:'t1', name:'Idli (2 pcs)',         price:30},
+    {id:'t2', name:'Vada (2 pcs)',          price:30},
+    {id:'t3', name:'Dosa',                 price:40},
+    {id:'t4', name:'Masala Dosa',          price:60},
+    {id:'t5', name:'Upma',                 price:35},
+    {id:'t6', name:'Pongal',               price:40},
+    {id:'t7', name:'Poori (2 pcs)',         price:45},
+    {id:'t8', name:'Chapati (2 pcs)',       price:40},
+    {id:'t9', name:'Rava Dosa',            price:55},
+    {id:'t10',name:'Set Dosa (3 pcs)',     price:55},
+    {id:'t11',name:'Onion Dosa',           price:55},
+    {id:'t12',name:'Pesarattu',            price:50},
+    {id:'t13',name:'Idli Vada Combo',      price:55},
+    {id:'t14',name:'Medu Vada',            price:35}
+  ],
+  'Rice Items': [
+    {id:'r1', name:'Tomato Rice',          price:60},
+    {id:'r2', name:'Lemon Rice',           price:55},
+    {id:'r3', name:'Tamarind Rice',        price:60},
+    {id:'r4', name:'Curd Rice',            price:55},
+    {id:'r5', name:'Coconut Rice',         price:60},
+    {id:'r6', name:'Gongura Rice',         price:65},
+    {id:'r7', name:'Sesame Rice',          price:60},
+    {id:'r8', name:'Pulihora',             price:60}
+  ],
+  'Meals': [
+    {id:'m1', name:'Full Meals',           price:90},
+    {id:'m2', name:'Mini Meals',           price:70}
+  ],
+  'Chaat': [
+    {id:'c1', name:'Pani Puri (6 pcs)',    price:40},
+    {id:'c2', name:'Bhel Puri',            price:45},
+    {id:'c3', name:'Sev Puri',             price:45},
+    {id:'c4', name:'Dahi Puri',            price:55},
+    {id:'c5', name:'Masala Puri',          price:50}
+  ],
+  'Pav Bhaji & Snacks': [
+    {id:'p1', name:'Pav Bhaji',            price:80},
+    {id:'p2', name:'Vada Pav',             price:30},
+    {id:'p3', name:'Veg Sandwich',         price:55},
+    {id:'p4', name:'Bread Pakoda',         price:45}
+  ]
+};
+
+let dineInCart = {}; // id -> { item, qty }
+
+function openNewOrderModal() {
+  dineInCart = {};
+  document.getElementById('dineInCustName').value = '';
+  document.getElementById('dineInTableNote').value = '';
+  renderDineInMenu();
+  renderDineInCart();
+  document.getElementById('dineInModal').classList.add('open');
+}
+
+function closeNewOrderModal() {
+  document.getElementById('dineInModal').classList.remove('open');
+}
+
+function renderDineInMenu() {
+  const col = document.getElementById('dineInMenuCol');
+  let html = '<div style="font-size:0.78rem;color:var(--text-faint);margin-bottom:12px;">Select items from the menu:</div>';
+  Object.entries(ADMIN_MENU).forEach(([cat, items]) => {
+    html += `<div class="dinein-section-label">${cat}</div>`;
+    items.forEach(item => {
+      const qty = dineInCart[item.id]?.qty || 0;
+      html += `<div class="dinein-item-row">
+        <span class="dinein-item-name">${item.name}</span>
+        <span class="dinein-item-price">₹${item.price}</span>
+        <div class="dinein-qty-ctrl">
+          <button class="dinein-qty-btn" onclick="adjustDineInQty('${item.id}', -1)">−</button>
+          <span class="dinein-qty-num" id="dq-${item.id}">${qty}</span>
+          <button class="dinein-qty-btn" onclick="adjustDineInQty('${item.id}', 1)">+</button>
+        </div>
+      </div>`;
+    });
+  });
+  col.innerHTML = html;
+}
+
+function adjustDineInQty(id, delta) {
+  // Find item in all categories
+  let found = null;
+  for (const items of Object.values(ADMIN_MENU)) {
+    found = items.find(i => i.id === id);
+    if (found) break;
+  }
+  if (!found) return;
+
+  const cur = dineInCart[id]?.qty || 0;
+  const next = Math.max(0, cur + delta);
+  if (next === 0) { delete dineInCart[id]; }
+  else { dineInCart[id] = { item: found, qty: next }; }
+
+  // Update qty display
+  const numEl = document.getElementById('dq-' + id);
+  if (numEl) numEl.textContent = next;
+
+  renderDineInCart();
+}
+
+function renderDineInCart() {
+  const body  = document.getElementById('dineInCartBody');
+  const total = document.getElementById('dineInTotal');
+  const btn   = document.getElementById('dineInCreateBtn');
+  const entries = Object.values(dineInCart);
+
+  if (!entries.length) {
+    body.innerHTML = '<div class="dinein-cart-empty">No items yet.</div>';
+    total.textContent = '₹0';
+    btn.disabled = true;
+    return;
+  }
+
+  let sum = 0;
+  body.innerHTML = entries.map(({ item, qty }) => {
+    const lineTotal = item.price * qty;
+    sum += lineTotal;
+    return `<div class="dinein-cart-item">
+      <span class="dinein-cart-item-name">${item.name} ×${qty}</span>
+      <span class="dinein-cart-item-total">₹${lineTotal}</span>
+    </div>`;
+  }).join('');
+
+  total.textContent = '₹' + sum;
+  btn.disabled = false;
+}
+
+async function createDineInOrder() {
+  const btn = document.getElementById('dineInCreateBtn');
+  if (btn.disabled) return;
+  btn.disabled = true;
+  btn.textContent = 'Creating…';
+
+  const entries  = Object.values(dineInCart);
+  const custName = document.getElementById('dineInCustName').value.trim() || 'Walk-in';
+  const tableNote= document.getElementById('dineInTableNote').value.trim();
+  const total    = entries.reduce((s, { item, qty }) => s + item.price * qty, 0);
+  const tokenNum = 'DI-' + Date.now().toString().slice(-6);
+
+  const order = {
+    orderNumber:  tokenNum,
+    tokenNumber:  tokenNum,
+    orderType:    'dinein',
+    status:       'pending',
+    createdAt:    new Date().toISOString(),
+    totalAmount:  total,
+    deliveryFee:  0,
+    customer: {
+      name:    custName,
+      phone:   '',
+      address: tableNote || 'Dine-In',
+      instructions: tableNote
+    },
+    items: entries.map(({ item, qty }) => ({
+      id:       item.id,
+      name:     item.name,
+      price:    item.price,
+      quantity: qty
+    }))
+  };
+
+  try {
+    const ref = await fbDb.ref('orders').push(order);
+    order._id = ref.key;
+    allOrders.unshift(order);
+    closeNewOrderModal();
+    showToast('Dine-In order created!', 'success');
+    updateMiniStats();
+    // Auto-print
+    currentModalOrder = order;
+    printInvoice(ref.key);
+  } catch (err) {
+    showToast('Could not save order: ' + err.message, 'error');
+    btn.disabled = false;
+    btn.innerHTML = '🖨️ Create &amp; Print Invoice';
+  }
+}
 </script>
 </body>
 </html>
